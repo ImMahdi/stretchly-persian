@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="stretchly_128x128.png" width="110" height="110" alt="Stretchly Persian Logo">
+<img src="https://github.com/aef3361c-9980-42f7-b265-41f77ac1399e" width="110" height="110" alt="Stretchly Persian Logo">
 
 # 🌿 Stretchly Persian (استرچلی فارسی)
 
