@@ -99,7 +99,8 @@ function exposeStretchly () {
     openIdeasFolder: () => ipcRenderer.invoke('open-ideas-folder'),
     openIdeasFile: (type) => ipcRenderer.invoke('open-ideas-file', type),
     syncIdeasToTxt: (microText, longText) => ipcRenderer.invoke('sync-ideas-to-txt', microText, longText),
-    readIdeasFromTxt: () => ipcRenderer.invoke('read-ideas-from-txt')
+    readIdeasFromTxt: () => ipcRenderer.invoke('read-ideas-from-txt'),
+    getCurrentLocaleIdeas: () => ipcRenderer.invoke('get-current-locale-ideas')
   })
 }
 

@@ -622,7 +622,7 @@
 
         <div class="card-divider"></div>
 
-        <!-- Version & Update Row -->
+        <!-- Version Display Row -->
         <div class="card-row">
           <div class="row-info">
             <span class="row-title">
@@ -630,16 +630,25 @@
               <span class="version-badge version"></span>
             </span>
           </div>
+          <div class="latest-version-info">
+            <span data-i18next="preferences.about.latestVersion"></span><span class="latestVersion"></span>
+          </div>
+        </div>
+
+        <div class="card-divider"></div>
+
+        <!-- Automatic Updates Toggle Row -->
+        <div class="card-row">
+          <div class="header-left">
+            <span class="card-title" data-i18next="preferences.about.checkNewVersion"></span>
+            <p class="card-desc" data-i18next="preferences.about.checkNewVersionDesc"></p>
+          </div>
           <div class="update-check-wrapper">
             <label class="modern-switch" for="checkNewVersion">
               <input type="checkbox" value="checkNewVersion" id="checkNewVersion">
               <span class="switch-track"></span>
             </label>
           </div>
-        </div>
-
-        <div class="latest-version-info">
-          (<span data-i18next="preferences.about.latestVersion"></span>: <span class="latestVersion"></span>)
         </div>
       </div>
 
@@ -650,7 +659,7 @@
             <img src="images/preferences/home.svg" class="home-icon" alt="Home">
             <span data-i18next="preferences.about.learnMore"></span>
           </div>
-          <a class="modern-link-btn" data-i18next="preferences.about.ourWebsite" href="https://hovancik.net/stretchly/"></a>
+          <a class="modern-link-btn" data-i18next="preferences.about.ourWebsite" href="https://github.com/ImMahdi/stretchly-persian"></a>
         </div>
 
         <div class="card-divider"></div>

@@ -6,12 +6,17 @@ import './platform.js'
 
 const versionChecker = new VersionChecker()
 let eventsAttached = false
+let reloadIdeasInputs = null
+let updateLatestVersion = null
 
 window.onload = async (e) => {
   const bounds = await window.stretchly.getWindowBounds()
   const settings = await window.settings.currentSettings()
   if (settings.disableAppUpdateFeatures) {
-    document.querySelector('#checkNewVersion').closest('div').classList.add('hidden')
+    const updateCheckRow = document.querySelector('#checkNewVersion').closest('.card-row') || document.querySelector('#checkNewVersion').closest('div')
+    if (updateCheckRow) {
+      updateCheckRow.classList.add('hidden')
+    }
   }
 
   if (settings.hideStrictModePreferences) {
@@ -110,6 +115,12 @@ window.onload = async (e) => {
       document.querySelector('#longBreakEvery').closest('div').querySelector('output')
         .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
     })
+    if (reloadIdeasInputs) {
+      await reloadIdeasInputs()
+    }
+    if (updateLatestVersion) {
+      await updateLatestVersion()
+    }
     setWindowHeight()
   })
 
@@ -385,40 +396,55 @@ window.onload = async (e) => {
       return
     }
 
-    function updateCounts () {
+    async function updateCounts () {
       const microLines = microTextarea.value.split('\n').map(l => l.trim()).filter(l => l.length > 0)
       const longLines = longTextarea.value.split('\n').map(l => l.trim()).filter(l => l.length > 0)
-      const isRtl = document.body.dir === 'rtl'
+      const countUnit = await window.i18next.t('preferences.ideas.countUnit')
+      const longCountUnit = await window.i18next.t('preferences.ideas.longCountUnit')
       if (microCount) {
-        microCount.textContent = `${microLines.length} ${isRtl ? 'جمله فعال' : 'active ideas'}`
+        microCount.textContent = `${microLines.length} ${countUnit}`
       }
       if (longCount) {
-        longCount.textContent = `${longLines.length} ${isRtl ? 'تمرین فعال' : 'active exercises'}`
+        longCount.textContent = `${longLines.length} ${longCountUnit}`
       }
     }
 
     microTextarea.addEventListener('input', updateCounts)
     longTextarea.addEventListener('input', updateCounts)
 
-    try {
-      const txtData = await window.stretchly.readIdeasFromTxt()
-      if (txtData && txtData.microText && txtData.longText) {
-        microTextarea.value = txtData.microText
-        longTextarea.value = txtData.longText
-      } else if (settings.microbreakIdeas && settings.breakIdeas) {
-        microTextarea.value = settings.microbreakIdeas
-          .filter(i => i.enabled !== false)
-          .map(i => i.data)
-          .join('\n')
-        longTextarea.value = settings.breakIdeas
-          .filter(i => i.enabled !== false)
-          .map(i => Array.isArray(i.data) ? `${i.data[0]} | ${i.data[1]}` : i.data)
-          .join('\n')
+    reloadIdeasInputs = async () => {
+      try {
+        const curSettings = await window.settings.currentSettings()
+        if (!curSettings.useIdeasFromSettings) {
+          const localeIdeas = await window.stretchly.getCurrentLocaleIdeas()
+          if (localeIdeas && (localeIdeas.microText || localeIdeas.longText)) {
+            microTextarea.value = localeIdeas.microText
+            longTextarea.value = localeIdeas.longText
+            await updateCounts()
+            return
+          }
+        }
+        const txtData = await window.stretchly.readIdeasFromTxt()
+        if (txtData && txtData.microText && txtData.longText) {
+          microTextarea.value = txtData.microText
+          longTextarea.value = txtData.longText
+        } else if (curSettings.microbreakIdeas && curSettings.breakIdeas) {
+          microTextarea.value = curSettings.microbreakIdeas
+            .filter(i => i.enabled !== false)
+            .map(i => i.data)
+            .join('\n')
+          longTextarea.value = curSettings.breakIdeas
+            .filter(i => i.enabled !== false)
+            .map(i => Array.isArray(i.data) ? `${i.data[0]} | ${i.data[1]}` : i.data)
+            .join('\n')
+        }
+        await updateCounts()
+      } catch (err) {
+        console.error('Stretchly: error loading ideas into inputs', err)
       }
-      updateCounts()
-    } catch (err) {
-      console.error('Stretchly: error loading ideas into inputs', err)
     }
+
+    await reloadIdeasInputs()
 
     if (btnSave) {
       btnSave.onclick = async () => {
@@ -444,7 +470,7 @@ window.onload = async (e) => {
 
         await window.stretchly.syncIdeasToTxt(microTextarea.value, longTextarea.value)
 
-        updateCounts()
+        await updateCounts()
 
         if (toast) {
           toast.classList.remove('hidden')
@@ -457,13 +483,18 @@ window.onload = async (e) => {
 
     if (btnRestore) {
       btnRestore.onclick = async () => {
-        const isRtl = document.body.dir === 'rtl'
-        const confirmMsg = isRtl
-          ? 'آیا مطمئن هستید که می‌خواهید تمام جملات به حالت پیش‌فرض اولیه بازگردند؟'
-          : 'Are you sure you want to reset all ideas to default?'
+        const confirmMsg = await window.i18next.t('preferences.ideas.restoreConfirm')
         if (window.confirm(confirmMsg)) {
           window.settings.saveSettings('useIdeasFromSettings', false)
-          window.location.reload()
+          const localeIdeas = await window.stretchly.getCurrentLocaleIdeas()
+          if (localeIdeas) {
+            microTextarea.value = localeIdeas.microText
+            longTextarea.value = localeIdeas.longText
+            await window.stretchly.syncIdeasToTxt(localeIdeas.microText, localeIdeas.longText)
+            await updateCounts()
+          } else {
+            window.location.reload()
+          }
         }
       }
     }
@@ -478,16 +509,24 @@ window.onload = async (e) => {
   await initIdeasTab()
 
   document.querySelector('.version').innerHTML = await window.stretchly.getVersion()
-  if (!settings.disableAppUpdateFeatures) {
-    versionChecker.latest()
-      .then(version => {
-        document.querySelector('.latestVersion').innerHTML = version.replace('v', '')
-      })
-      .catch(exception => {
+
+  updateLatestVersion = async () => {
+    if (!settings.disableAppUpdateFeatures) {
+      try {
+        const version = await versionChecker.latest()
+        if (version) {
+          document.querySelector('.latestVersion').innerHTML = version.replace('v', '')
+        } else {
+          document.querySelector('.latestVersion').innerHTML = await window.i18next.t('preferences.about.upToDate')
+        }
+      } catch (exception) {
         console.error(exception)
-        document.querySelector('.latestVersion').innerHTML = 'N/A'
-      })
+        document.querySelector('.latestVersion').innerHTML = await window.i18next.t('preferences.about.upToDate')
+      }
+    }
   }
+
+  await updateLatestVersion()
 
   function setWindowHeight () {
     const classes = document.querySelector('body').classList

@@ -1,7 +1,7 @@
-# Graph Report - Stretchly  (2026-09-23)
+# Graph Report - Stretchly  (2026-09-20)
 
 ## Corpus Check
-- 130 files · ~167,315 words
+- 130 files · ~167,046 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3af5c57b`
+- Built from commit: `d33ea655`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -106,7 +106,7 @@
 - repository
 - workflows/graphify.md
 - files
-- nsisWeb
+- nsis
 - [1.13.0] - 2022-12-23
 - [1.17.1] - 2024-12-25
 
@@ -145,7 +145,7 @@ Nodes (67): breakComplete(), calculateBackgroundColor(), checkVersion(), closeWi
 
 ### Community 1 - "build"
 Cohesion: 0.20
-Nodes (10): build, appId, nsis, portable, productName, snap, allowToChangeInstallationDirectory, oneClick (+2 more)
+Nodes (10): build, appId, nsisWeb, portable, productName, snap, allowToChangeInstallationDirectory, oneClick (+2 more)
 
 ### Community 2 - "Components"
 Cohesion: 0.12
@@ -463,9 +463,9 @@ Nodes (4): dmg, contents, icon, iconSize
 Cohesion: 0.67
 Nodes (3): repository, type, url
 
-### Community 94 - "nsisWeb"
+### Community 94 - "nsis"
 Cohesion: 0.67
-Nodes (3): nsisWeb, allowToChangeInstallationDirectory, oneClick
+Nodes (3): nsis, allowToChangeInstallationDirectory, oneClick
 
 ## Knowledge Gaps
 - **333 isolated node(s):** `__filename`, `__dirname`, `global`, `commandLineArguments`, `gotTheLock` (+328 more)
@@ -477,7 +477,7 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Change Log` connect `Change Log` to `[0.9.0] - 2017-05-17`, `[1.0.0] - 2020-07-18`, `[1.11.0] - 2022-8-7`, `[0.10.0] - 2017-08-18`, `[0.12.0] - 2017-11-05`, `[0.14.0] - 2018-01-07`, `[0.16.0] - 2018-03-17`, `[0.17.0] - 2018-05-06`, `[0.18.0] - 2018-10-21`, `[0.19.0] - 2019-02-10`, `[0.19.1] - 2019-02-17`, `[0.20.0] - 2019-07-02`, `[0.21.0] - 2019-10-13`, `[0.21.1] - 2020-01-16`, `[0.4.0] - 2016-11-05`, `[0.7.0] - 2017-03-07`, `[0.99.0] - 2020-03-19 Patreon`, `[0.99.1] - 2020-04-09 Patreon`, `[0.99.3] - 2020-05-05 Patreon`, `[1.12.0] - 2022-9-24`, `[1.16.0] - 2024-08-11`, `[1.17.0] - 2024-12-24`, `[1.18.0] - 2025-9-15`, `[1.19.0] - 2025-11-13`, `[1.1.99] - 2020-9-27 Patreon`, `[1.20.0] - 2025-12-24`, `[1.21.0] - 2026-04-25`, `[1.22.0] - 2026-07-17`, `[1.2.0] - 2020-10-03`, `[1.3.0] - 2020-11-08`, `[1.4.0] - 2020-12-25`, `[1.5.0] - 2021-04-07`, `[1.6.0] - 2021-04-16`, `[1.7.0] - 2021-05-04`, `[1.8.0] - 2021-11-21`, `[1.9.0] - 2021-12-24`, `[0.15.0] - 2018-02-18`, `[0.20.1] - 2019-07-14`, `[0.5.0] - 2016-11-28`, `[0.5.1] - 2016-12-05`, `[0.6.0] - 2017-01-21`, `[0.8.0] - 2017-04-09`, `[0.8.1] - 2017-04-15`, `[0.99.2] - 2020-04-27 Patreon`, `[0.99.4] - 2020-05-15 Patreon`, `[0.99.5] - 2020-07-04 Patreon`, `[1.10.0] - 2022-2-22`, `[1.14.1] - 2023-06-04`, `[1.15.1] - 2023-11-19`, `[1.18.1] - 2025-9-27`, `[1.1.0] - 2020-09-12`, `[1.22.1] - 2026-08-13`, `[1.6.99] - 2021-05-02 Patreon`, `[1.8.1] - 2021-11-24`, `[1.13.0] - 2022-12-23`, `[1.17.1] - 2024-12-25`?**
   _High betweenness centrality (0.108) - this node is a cross-community bridge._
-- **Why does `build` connect `build` to `fpm`, `target`, `target`, `package.json`, `dmg`, `appx`, `mac`, `files`, `nsisWeb`?**
+- **Why does `build` connect `build` to `fpm`, `target`, `target`, `package.json`, `dmg`, `appx`, `mac`, `files`, `nsis`?**
   _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Why does `BreaksPlanner` connect `BreaksPlanner` to `main.js`, `AppExclusionsManager`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._

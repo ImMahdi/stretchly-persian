@@ -11,10 +11,9 @@ describe('VersionChecker', () => {
   describe('latest', () => {
     it('fetches tag name', async () => {
       const tagName = 'tag name'
-      const body = 'body'
-      const parse = vi.spyOn(JSON, 'parse').mockReturnValue({ tag_name: tagName })
       const response = {
-        text: vi.fn().mockReturnValue(Promise.resolve(body))
+        ok: true,
+        json: vi.fn().mockReturnValue(Promise.resolve({ tag_name: tagName }))
       }
       const fetch = vi.fn().mockReturnValue(Promise.resolve(response))
       vi.stubGlobal('fetch', fetch)
@@ -24,17 +23,16 @@ describe('VersionChecker', () => {
 
       expect(result).to.equal(tagName)
       expect(fetch.mock.calls[0]).toEqual([
-        'https://api.github.com/repos/hovancik/stretchly/releases/latest',
+        'https://api.github.com/repos/ImMahdi/stretchly-persian/releases/latest',
         {
           method: 'GET',
-          headers: { 'User-Agent': 'hovancik/stretchly' },
+          headers: { 'User-Agent': 'ImMahdi/stretchly-persian' },
           mode: 'cors',
           cache: 'default'
         }
       ])
 
-      expect(response.text).toHaveBeenCalled()
-      expect(parse.mock.calls[0]).toEqual([body])
+      expect(response.json).toHaveBeenCalled()
     })
   })
 })

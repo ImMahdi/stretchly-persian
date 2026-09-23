@@ -83,6 +83,7 @@
       "restoreBtn": "Restore Defaults",
       "openTxtBtn": "Open in Notepad 📝",
       "countUnit": "active ideas",
+      "longCountUnit": "active exercises",
       "restoreConfirm": "Are you sure you want to reset all ideas to default?"
     },
     "theme": {
@@ -114,6 +115,8 @@
       "version": "Version ",
       "latestVersion": "Latest version ",
       "checkNewVersion": "Automatically check for app updates",
+      "checkNewVersionDesc": "Periodically check GitHub to notify when new versions are released",
+      "upToDate": "Up to date",
       "learnMore": "To learn more about Stretchly features, view a tutorial, download the latest version or contact us for support, ",
       "ourWebsite": "visit our website",
       "dot": ".",

@@ -1250,7 +1250,8 @@ function calculateBackgroundColor (color) {
 function loadIdeas () {
   let longBreakIdeasData
   let miniBreakIdeasData
-  if (settings.get('useIdeasFromSettings')) {
+  const isCustom = settings.get('useIdeasFromSettings')
+  if (isCustom) {
     longBreakIdeasData = settings.get('breakIdeas')
     miniBreakIdeasData = settings.get('microbreakIdeas')
     log.info('Stretchly: loading custom break ideas from preferences file')
@@ -1273,10 +1274,10 @@ function loadIdeas () {
   breakIdeas = new IdeasLoader(longBreakIdeasData).ideas()
   microbreakIdeas = new IdeasLoader(miniBreakIdeasData).ideas()
 
-  ensureIdeasFilesExist(miniBreakIdeasData, longBreakIdeasData)
+  ensureIdeasFilesExist(miniBreakIdeasData, longBreakIdeasData, !isCustom)
 }
 
-function ensureIdeasFilesExist (miniData, longData) {
+function ensureIdeasFilesExist (miniData, longData, forceOverwrite = false) {
   try {
     const ideasDir = join(app.getPath('userData'), 'ideas')
     if (!existsSync(ideasDir)) {
@@ -1284,11 +1285,11 @@ function ensureIdeasFilesExist (miniData, longData) {
     }
     const microPath = join(ideasDir, 'microbreak-ideas.txt')
     const longPath = join(ideasDir, 'longbreak-ideas.txt')
-    if (!existsSync(microPath) && Array.isArray(miniData)) {
+    if ((forceOverwrite || !existsSync(microPath)) && Array.isArray(miniData)) {
       const microContent = miniData.map(item => item.data).join('\n')
       writeFileSync(microPath, microContent, 'utf8')
     }
-    if (!existsSync(longPath) && Array.isArray(longData)) {
+    if ((forceOverwrite || !existsSync(longPath)) && Array.isArray(longData)) {
       const longContent = longData.map(item => Array.isArray(item.data) ? `${item.data[0]} | ${item.data[1]}` : item.data).join('\n')
       writeFileSync(longPath, longContent, 'utf8')
     }
@@ -1768,6 +1769,18 @@ ipcMain.handle('sync-ideas-to-txt', async (event, microbreakText, longbreakText)
 
 ipcMain.handle('read-ideas-from-txt', async () => {
   try {
+    if (!settings.get('useIdeasFromSettings')) {
+      const t = i18next.getFixedT('en')
+      const miniBreakIdeasData = Object.keys(t('miniBreakIdeas', { returnObjects: true }))
+        .map(item => ({ data: i18next.t(`miniBreakIdeas.${item}.text`), enabled: true }))
+      const longBreakIdeasData = Object.keys(t('longBreakIdeas', { returnObjects: true }))
+        .map(item => ({ data: [i18next.t(`longBreakIdeas.${item}.title`), i18next.t(`longBreakIdeas.${item}.text`)], enabled: true }))
+
+      const microText = miniBreakIdeasData.map(item => item.data).join('\n')
+      const longText = longBreakIdeasData.map(item => Array.isArray(item.data) ? `${item.data[0]} | ${item.data[1]}` : item.data).join('\n')
+      return { microText, longText }
+    }
+
     const ideasDir = join(app.getPath('userData'), 'ideas')
     const microPath = join(ideasDir, 'microbreak-ideas.txt')
     const longPath = join(ideasDir, 'longbreak-ideas.txt')
@@ -1783,6 +1796,23 @@ ipcMain.handle('read-ideas-from-txt', async () => {
   } catch (err) {
     log.error('Stretchly: error reading ideas from txt:', err)
     return { microText: null, longText: null }
+  }
+})
+
+ipcMain.handle('get-current-locale-ideas', async () => {
+  try {
+    const t = i18next.getFixedT('en')
+    const miniBreakIdeasData = Object.keys(t('miniBreakIdeas', { returnObjects: true }))
+      .map(item => ({ data: i18next.t(`miniBreakIdeas.${item}.text`), enabled: true }))
+    const longBreakIdeasData = Object.keys(t('longBreakIdeas', { returnObjects: true }))
+      .map(item => ({ data: [i18next.t(`longBreakIdeas.${item}.title`), i18next.t(`longBreakIdeas.${item}.text`)], enabled: true }))
+
+    const microText = miniBreakIdeasData.map(item => item.data).join('\n')
+    const longText = longBreakIdeasData.map(item => Array.isArray(item.data) ? `${item.data[0]} | ${item.data[1]}` : item.data).join('\n')
+    return { microText, longText }
+  } catch (err) {
+    log.error('Stretchly: error getting current locale ideas:', err)
+    return { microText: '', longText: '' }
   }
 })
 

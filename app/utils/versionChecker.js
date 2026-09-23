@@ -1,16 +1,21 @@
 class VersionChecker {
   latest () {
     return fetch(
-      'https://api.github.com/repos/hovancik/stretchly/releases/latest',
+      'https://api.github.com/repos/ImMahdi/stretchly-persian/releases/latest',
       {
         method: 'GET',
-        headers: { 'User-Agent': 'hovancik/stretchly' },
+        headers: { 'User-Agent': 'ImMahdi/stretchly-persian' },
         mode: 'cors',
         cache: 'default'
       })
-      .then(response => response.text())
-      .then(body => JSON.parse(body).tag_name)
-      .catch(() => {})
+      .then(response => {
+        if (!response.ok) {
+          return null
+        }
+        return response.json()
+      })
+      .then(body => (body && body.tag_name) ? body.tag_name : null)
+      .catch(() => null)
   }
 }
 
