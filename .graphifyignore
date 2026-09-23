@@ -1,0 +1,10 @@
+# Exclude binary media assets and repetitive tray icon numbers from graph extraction
+app/images/app-icons/
+app/images/*.png
+app/images/*.ico
+app/audio/*.wav
+graphics/
+*.png
+*.ico
+*.svg
+*.wav

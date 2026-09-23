@@ -134,14 +134,20 @@ window.onload = async (e) => {
     showContributorPreferencesButton()
   }
 
-  document.querySelector('[name="contributorPreferences"]').onclick = (event) => {
-    event.preventDefault()
-    window.stretchly.openContributorPreferences()
+  const contribPrefBtn = document.querySelector('[name="contributorPreferences"]')
+  if (contribPrefBtn) {
+    contribPrefBtn.onclick = (event) => {
+      event.preventDefault()
+      window.stretchly.openContributorPreferences()
+    }
   }
 
-  document.querySelector('[name="syncPreferences"]').onclick = (event) => {
-    event.preventDefault()
-    window.stretchly.openSyncPreferences()
+  const syncPrefBtn = document.querySelector('[name="syncPreferences"]')
+  if (syncPrefBtn) {
+    syncPrefBtn.onclick = (event) => {
+      event.preventDefault()
+      window.stretchly.openSyncPreferences()
+    }
   }
 
   document.querySelector('.debug button').onclick = async (event) => {
@@ -164,8 +170,9 @@ window.onload = async (e) => {
       })
       event.target.closest('a').classList.add('active')
 
-      const toBeDisplayed = document.querySelector(`.${event.target.closest('[data-section]').getAttribute('data-section')}`)
-      document.querySelectorAll('body > div:not(.custom-message)').forEach(section => {
+      const targetSection = event.target.closest('[data-section]').getAttribute('data-section')
+      const toBeDisplayed = document.querySelector(`.${targetSection}`)
+      document.querySelectorAll('.section-content, body > div:not(.custom-message)').forEach(section => {
         if (section !== toBeDisplayed) {
           section.classList.add('hidden')
         } else {
@@ -178,15 +185,63 @@ window.onload = async (e) => {
     }
   })
 
+  const updateCardDisabledStates = () => {
+    const miniCheckbox = document.querySelector('#enableMiniBreaks')
+    const miniCard = document.querySelector('#cardMiniBreaks')
+    if (miniCheckbox && miniCard) {
+      const isMiniEnabled = miniCheckbox.checked
+      miniCard.classList.toggle('is-disabled', !isMiniEnabled)
+      miniCard.querySelectorAll('.card-content-body input').forEach(input => {
+        input.disabled = !isMiniEnabled
+      })
+      const strictMini = document.querySelector('#enableStrictMini')
+      if (strictMini) {
+        strictMini.disabled = !isMiniEnabled
+        const strictRow = strictMini.closest('.card-row')
+        if (strictRow) strictRow.classList.toggle('is-disabled-row', !isMiniEnabled)
+      }
+    }
+
+    const longCheckbox = document.querySelector('#enableLongBreaks')
+    const longCard = document.querySelector('#cardLongBreaks')
+    if (longCheckbox && longCard) {
+      const isLongEnabled = longCheckbox.checked
+      longCard.classList.toggle('is-disabled', !isLongEnabled)
+      longCard.querySelectorAll('.card-content-body input').forEach(input => {
+        input.disabled = !isLongEnabled
+      })
+      const strictLong = document.querySelector('#enableStrictLong')
+      if (strictLong) {
+        strictLong.disabled = !isLongEnabled
+        const strictRow = strictLong.closest('.card-row')
+        if (strictRow) strictRow.classList.toggle('is-disabled-row', !isLongEnabled)
+      }
+    }
+
+    const soundsCheckbox = document.querySelector('#enableSounds')
+    const soundsCard = document.querySelector('#cardSounds')
+    if (soundsCheckbox && soundsCard) {
+      const isSoundsEnabled = soundsCheckbox.checked
+      soundsCard.classList.toggle('is-disabled', !isSoundsEnabled)
+      soundsCard.querySelectorAll('.card-content-body input, .card-content-body button').forEach(el => {
+        el.disabled = !isSoundsEnabled
+      })
+    }
+  }
+
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     const isNegative = checkbox.classList.contains('negative')
     checkbox.checked = isNegative ? !settings[checkbox.value] : settings[checkbox.value]
     if (!eventsAttached) {
-      checkbox.onchange = (event) =>
+      checkbox.onchange = (event) => {
         window.settings.saveSettings(checkbox.value,
           isNegative ? !checkbox.checked : checkbox.checked)
+        updateCardDisabledStates()
+      }
     }
   })
+
+  updateCardDisabledStates()
 
   document.querySelectorAll('input[type="radio"]').forEach(radio => {
     let value
@@ -245,10 +300,15 @@ window.onload = async (e) => {
     }
   })
 
-  document.querySelectorAll('.sounds img').forEach(preview => {
+  document.querySelectorAll('.btn-sound-preview, .sounds img').forEach(preview => {
     if (!eventsAttached) {
-      preview.onclick = (event) =>
-        window.stretchly.playSound(preview.closest('div').querySelector('input').value)
+      preview.onclick = (event) => {
+        event.stopPropagation()
+        const sound = preview.dataset.sound || preview.closest('.sound-tile, div').querySelector('input').value
+        window.stretchly.playSound(sound)
+        preview.classList.add('playing')
+        setTimeout(() => preview.classList.remove('playing'), 800)
+      }
     }
   })
 
@@ -262,11 +322,15 @@ window.onload = async (e) => {
         window.settings.saveSettings(element.value, element.checked)
         window.alert(await window.i18next.t('preferences.schedule.cantDisableBoth'))
       }
+      updateCardDisabledStates()
     }
   })
 
-  document.querySelector('.settings > div > button').onclick = (event) => {
-    window.stretchly.restoreDefaults()
+  const restoreBtn = document.querySelector('.btn-restore') || document.querySelector('.settings > div > button')
+  if (restoreBtn) {
+    restoreBtn.onclick = (event) => {
+      window.stretchly.restoreDefaults()
+    }
   }
 
   document.querySelectorAll('.about a').forEach((item) => {
@@ -280,18 +344,24 @@ window.onload = async (e) => {
     }
   })
 
-  document.querySelector('[name="becomeContributor"]').onclick = () => {
-    window.electronApi.openExternal('https://hovancik.net/stretchly/sponsor')
+  const becomeBtn = document.querySelector('[name="becomeContributor"]')
+  if (becomeBtn) {
+    becomeBtn.onclick = () => {
+      window.electronApi.openExternal('https://hovancik.net/stretchly/sponsor')
+    }
   }
 
-  document.querySelector('[name="alreadyContributor"]').onclick = () => {
-    document.querySelectorAll('.become').forEach((item) => {
-      item.classList.add('hidden')
-    })
-    document.querySelectorAll('.authenticate').forEach((item) => {
-      item.classList.remove('hidden')
-    })
-    setWindowHeight()
+  const alreadyBtn = document.querySelector('[name="alreadyContributor"]')
+  if (alreadyBtn) {
+    alreadyBtn.onclick = () => {
+      document.querySelectorAll('.become').forEach((item) => {
+        item.classList.add('hidden')
+      })
+      document.querySelectorAll('.authenticate').forEach((item) => {
+        item.classList.remove('hidden')
+      })
+      setWindowHeight()
+    }
   }
 
   document.querySelectorAll('.authenticate a').forEach((button) => {
@@ -300,6 +370,112 @@ window.onload = async (e) => {
       window.stretchly.openContributorAuth(button.dataset.provider)
     }
   })
+
+  async function initIdeasTab () {
+    const microTextarea = document.querySelector('#microbreakIdeasText')
+    const longTextarea = document.querySelector('#longbreakIdeasText')
+    const microCount = document.querySelector('#microbreakIdeasCount')
+    const longCount = document.querySelector('#longbreakIdeasCount')
+    const btnSave = document.querySelector('#btnSaveIdeas')
+    const btnRestore = document.querySelector('#btnRestoreIdeas')
+    const btnOpenTxt = document.querySelector('#btnOpenIdeasTxt')
+    const toast = document.querySelector('#ideasToast')
+
+    if (!microTextarea || !longTextarea) {
+      return
+    }
+
+    function updateCounts () {
+      const microLines = microTextarea.value.split('\n').map(l => l.trim()).filter(l => l.length > 0)
+      const longLines = longTextarea.value.split('\n').map(l => l.trim()).filter(l => l.length > 0)
+      const isRtl = document.body.dir === 'rtl'
+      if (microCount) {
+        microCount.textContent = `${microLines.length} ${isRtl ? 'جمله فعال' : 'active ideas'}`
+      }
+      if (longCount) {
+        longCount.textContent = `${longLines.length} ${isRtl ? 'تمرین فعال' : 'active exercises'}`
+      }
+    }
+
+    microTextarea.addEventListener('input', updateCounts)
+    longTextarea.addEventListener('input', updateCounts)
+
+    try {
+      const txtData = await window.stretchly.readIdeasFromTxt()
+      if (txtData && txtData.microText && txtData.longText) {
+        microTextarea.value = txtData.microText
+        longTextarea.value = txtData.longText
+      } else if (settings.microbreakIdeas && settings.breakIdeas) {
+        microTextarea.value = settings.microbreakIdeas
+          .filter(i => i.enabled !== false)
+          .map(i => i.data)
+          .join('\n')
+        longTextarea.value = settings.breakIdeas
+          .filter(i => i.enabled !== false)
+          .map(i => Array.isArray(i.data) ? `${i.data[0]} | ${i.data[1]}` : i.data)
+          .join('\n')
+      }
+      updateCounts()
+    } catch (err) {
+      console.error('Stretchly: error loading ideas into inputs', err)
+    }
+
+    if (btnSave) {
+      btnSave.onclick = async () => {
+        const microLines = microTextarea.value.split('\n').map(l => l.trim()).filter(l => l.length > 0)
+        const longLines = longTextarea.value.split('\n').map(l => l.trim()).filter(l => l.length > 0)
+        const isRtl = document.body.dir === 'rtl'
+
+        const microData = microLines.map(line => ({ data: line, enabled: true }))
+        const longData = longLines.map(line => {
+          if (line.includes('|')) {
+            const parts = line.split('|')
+            const title = parts[0].trim()
+            const text = parts.slice(1).join('|').trim()
+            return { data: [title, text], enabled: true }
+          } else {
+            return { data: [isRtl ? 'استراحت' : 'Break', line], enabled: true }
+          }
+        })
+
+        window.settings.saveSettings('microbreakIdeas', microData)
+        window.settings.saveSettings('breakIdeas', longData)
+        window.settings.saveSettings('useIdeasFromSettings', true)
+
+        await window.stretchly.syncIdeasToTxt(microTextarea.value, longTextarea.value)
+
+        updateCounts()
+
+        if (toast) {
+          toast.classList.remove('hidden')
+          setTimeout(() => {
+            toast.classList.add('hidden')
+          }, 3000)
+        }
+      }
+    }
+
+    if (btnRestore) {
+      btnRestore.onclick = async () => {
+        const isRtl = document.body.dir === 'rtl'
+        const confirmMsg = isRtl
+          ? 'آیا مطمئن هستید که می‌خواهید تمام جملات به حالت پیش‌فرض اولیه بازگردند؟'
+          : 'Are you sure you want to reset all ideas to default?'
+        if (window.confirm(confirmMsg)) {
+          window.settings.saveSettings('useIdeasFromSettings', false)
+          window.location.reload()
+        }
+      }
+    }
+
+    if (btnOpenTxt) {
+      btnOpenTxt.onclick = async () => {
+        await window.stretchly.openIdeasFolder()
+      }
+    }
+  }
+
+  await initIdeasTab()
 
   document.querySelector('.version').innerHTML = await window.stretchly.getVersion()
   if (!settings.disableAppUpdateFeatures) {

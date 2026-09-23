@@ -4,7 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
-import { readFile, writeFile, existsSync, mkdirSync } from 'node:fs'
+import { readFile, writeFile, readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
 import { fileURLToPath } from 'url'
@@ -137,6 +137,7 @@ if (!gotTheLock) {
     const cmd = new Command(commandLineArguments, app.getVersion())
 
     if (!cmd.hasSupportedCommand) {
+      createPreferencesWindow()
       return
     }
 
@@ -1271,6 +1272,29 @@ function loadIdeas () {
 
   breakIdeas = new IdeasLoader(longBreakIdeasData).ideas()
   microbreakIdeas = new IdeasLoader(miniBreakIdeasData).ideas()
+
+  ensureIdeasFilesExist(miniBreakIdeasData, longBreakIdeasData)
+}
+
+function ensureIdeasFilesExist (miniData, longData) {
+  try {
+    const ideasDir = join(app.getPath('userData'), 'ideas')
+    if (!existsSync(ideasDir)) {
+      mkdirSync(ideasDir, { recursive: true })
+    }
+    const microPath = join(ideasDir, 'microbreak-ideas.txt')
+    const longPath = join(ideasDir, 'longbreak-ideas.txt')
+    if (!existsSync(microPath) && Array.isArray(miniData)) {
+      const microContent = miniData.map(item => item.data).join('\n')
+      writeFileSync(microPath, microContent, 'utf8')
+    }
+    if (!existsSync(longPath) && Array.isArray(longData)) {
+      const longContent = longData.map(item => Array.isArray(item.data) ? `${item.data[0]} | ${item.data[1]}` : item.data).join('\n')
+      writeFileSync(longPath, longContent, 'utf8')
+    }
+  } catch (err) {
+    log.error('Stretchly: could not initialize ideas txt files', err)
+  }
 }
 
 function pauseBreaks (milliseconds) {
@@ -1302,7 +1326,9 @@ function resumeBreaks (notify = true) {
 
 function createPreferencesWindow () {
   if (preferencesWin) {
+    if (preferencesWin.isMinimized()) preferencesWin.restore()
     preferencesWin.show()
+    preferencesWin.focus()
     return
   }
   const modalPath = 'file://' + join(__dirname, '/preferences.html')
@@ -1638,6 +1664,10 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   settings.set(key, value)
 
+  if (key === 'microbreakIdeas' || key === 'breakIdeas' || key === 'useIdeasFromSettings') {
+    loadIdeas()
+  }
+
   updateTray()
 })
 
@@ -1693,6 +1723,67 @@ ipcMain.handle('show-debug', (event) => {
     doNotDisturb,
     imagesFolder
   ]
+})
+
+ipcMain.handle('open-ideas-file', async (event, type) => {
+  const ideasDir = join(app.getPath('userData'), 'ideas')
+  if (!existsSync(ideasDir)) {
+    mkdirSync(ideasDir, { recursive: true })
+  }
+  const filename = type === 'longbreak' ? 'longbreak-ideas.txt' : 'microbreak-ideas.txt'
+  const filePath = join(ideasDir, filename)
+  if (!existsSync(filePath)) {
+    const microbreakIdeas = settings.get('microbreakIdeas') || []
+    const breakIdeas = settings.get('breakIdeas') || []
+    const content = type === 'longbreak'
+      ? breakIdeas.map(i => Array.isArray(i.data) ? `${i.data[0]} | ${i.data[1]}` : i.data).join('\n')
+      : microbreakIdeas.map(i => i.data).join('\n')
+    writeFileSync(filePath, content, 'utf8')
+  }
+  return shell.openPath(filePath)
+})
+
+ipcMain.handle('open-ideas-folder', async () => {
+  const ideasDir = join(app.getPath('userData'), 'ideas')
+  if (!existsSync(ideasDir)) {
+    mkdirSync(ideasDir, { recursive: true })
+  }
+  return shell.openPath(ideasDir)
+})
+
+ipcMain.handle('sync-ideas-to-txt', async (event, microbreakText, longbreakText) => {
+  try {
+    const ideasDir = join(app.getPath('userData'), 'ideas')
+    if (!existsSync(ideasDir)) {
+      mkdirSync(ideasDir, { recursive: true })
+    }
+    writeFileSync(join(ideasDir, 'microbreak-ideas.txt'), microbreakText, 'utf8')
+    writeFileSync(join(ideasDir, 'longbreak-ideas.txt'), longbreakText, 'utf8')
+    return true
+  } catch (err) {
+    log.error('Stretchly: error syncing ideas to txt:', err)
+    return false
+  }
+})
+
+ipcMain.handle('read-ideas-from-txt', async () => {
+  try {
+    const ideasDir = join(app.getPath('userData'), 'ideas')
+    const microPath = join(ideasDir, 'microbreak-ideas.txt')
+    const longPath = join(ideasDir, 'longbreak-ideas.txt')
+    let microText = null
+    let longText = null
+    if (existsSync(microPath)) {
+      microText = readFileSync(microPath, 'utf8')
+    }
+    if (existsSync(longPath)) {
+      longText = readFileSync(longPath, 'utf8')
+    }
+    return { microText, longText }
+  } catch (err) {
+    log.error('Stretchly: error reading ideas from txt:', err)
+    return { microText: null, longText: null }
+  }
 })
 
 ipcMain.on('open-preferences', function (event) {

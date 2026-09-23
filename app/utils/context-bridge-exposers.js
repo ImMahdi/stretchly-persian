@@ -95,7 +95,11 @@ function exposeStretchly () {
     openPreferences: () => ipcRenderer.send('open-preferences'),
     playSound: (name) => ipcRenderer.send('play-sound', name),
     showDebug: () => ipcRenderer.invoke('show-debug'),
-    updateTray: () => ipcRenderer.send('update-tray')
+    updateTray: () => ipcRenderer.send('update-tray'),
+    openIdeasFolder: () => ipcRenderer.invoke('open-ideas-folder'),
+    openIdeasFile: (type) => ipcRenderer.invoke('open-ideas-file', type),
+    syncIdeasToTxt: (microText, longText) => ipcRenderer.invoke('sync-ideas-to-txt', microText, longText),
+    readIdeasFromTxt: () => ipcRenderer.invoke('read-ideas-from-txt')
   })
 }
 

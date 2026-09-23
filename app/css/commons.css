@@ -1,4 +1,49 @@
 @font-face {
+  font-family: 'Vazirmatn Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Vazirmatn Light'), local('Vazirmatn-Light'),
+       url('./fonts/Vazirmatn-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Vazirmatn Regular'), local('Vazirmatn-Regular'), local('Vazirmatn'),
+       url('./fonts/Vazirmatn-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Vazirmatn Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Vazirmatn Regular'), local('Vazirmatn-Regular'), local('Vazirmatn'),
+       url('./fonts/Vazirmatn-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Vazirmatn Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Vazirmatn Medium'), local('Vazirmatn-Medium'),
+       url('./fonts/Vazirmatn-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Vazirmatn Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Vazirmatn Bold'), local('Vazirmatn-Bold'),
+       url('./fonts/Vazirmatn-Bold.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Noto Sans Light';
   font-style: normal;
   font-weight: 300;
@@ -145,12 +190,12 @@
 body {
   background: var(--main-bg-color);
   color: var(--main-color);
-  font-family: 'Noto Sans Regular', 'Noto Sans Arabic Regular',
+  font-family: 'Vazirmatn', 'Vazirmatn Regular', 'Noto Sans Regular', 'Noto Sans Arabic Regular',
     'Noto Sans CJK KR Regular',
     'Noto Sans Devanagari Regular',
     'Noto Sans Gujarati Regular', 'Noto Sans Gurmukhi Regular',
     'Noto Sans Hebrew Regular',
-    'Noto Sans JP Regular';
+    'Noto Sans JP Regular', sans-serif;
 }
 
 .darwin .darwin-hidden,

@@ -27,3 +27,15 @@ than opening a low-quality Issue or PR.
 
 For technical stack and code style, see
 [.github/copilot-instructions.md](.github/copilot-instructions.md).
+
+## Codebase Architecture & Knowledge Graph (graphify)
+
+This repository maintains an active graphify knowledge graph in `graphify-out/`.
+All AI agents contributing to or exploring this repository must follow these rules:
+
+1. **Understand Codebase via the Graph**:
+   - Before answering questions about architecture, control flow, or debugging issues, consult `graphify-out/graph.json` via `graphify query "<question>"`, `graphify path "<nodeA>" "<nodeB>"`, or `graphify explain "<concept>"`.
+   - Review `graphify-out/GRAPH_REPORT.md` for high-level module architecture and God Nodes.
+2. **Update Graph on Code Changes**:
+   - Whenever any code files are added, modified, or deleted, run `graphify update .` to keep the knowledge graph synchronized with the latest codebase.
+

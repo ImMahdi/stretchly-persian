@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#ffdbd2","on-tertiary-fixed":"#002018","error-container":"#ffdad6","tertiary":"#326556","primary-fixed-dim":"#86d4d0","on-tertiary-container":"#f5fff9","secondary-container":"#fc9174","on-secondary-fixed":"#3c0800","on-primary-fixed-variant":"#00504e","surface-container":"#e5eeff","outline":"#6f7978","tertiary-container":"#4b7e6e","on-secondary":"#ffffff","on-secondary-container":"#742814","inverse-surface":"#213145","on-tertiary-fixed-variant":"#1b4f41","primary-fixed":"#a1f0ec","surface-tint":"#076a67","surface-variant":"#d3e4fe","on-surface-variant":"#3e4948","on-secondary-fixed-variant":"#7c2e19","on-primary":"#ffffff","tertiary-fixed":"#b8eeda","on-primary-fixed":"#00201f","secondary":"#9a442d","outline-variant":"#bec9c7","inverse-primary":"#86d4d0","background":"#f8f9ff","surface-container-low":"#eff4ff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","surface-dim":"#cbdbf5","on-background":"#0b1c30","error":"#ba1a1a","secondary-fixed-dim":"#ffb4a1","tertiary-fixed-dim":"#9cd1be","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","on-surface":"#0b1c30","on-error-container":"#93000a","primary":"#006765","primary-container":"#2d807e","on-primary-container":"#f3fffd","surface":"#f8f9ff","surface-bright":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"window-max-content-width":"640px","window-padding":"24px","window-default-width":"860px","card-gap":"12px","window-sidebar-width":"220px","space-sm":"8px","space-xl":"24px","window-min-width":"740px","card-padding":"16px 18px","space-2xs":"2px","space-xs":"4px","space-2xl":"32px","space-md":"12px","space-base":"16px","space-3xl":"40px","space-lg":"20px"},"fontFamily":{"headline-xl":["Manrope"],"body-lg":["Manrope"],"mono-metric":["JetBrains Mono"],"body-sm":["Manrope"],"headline-md":["Manrope"],"label-md":["Manrope"],"label-lg":["Manrope"],"body-md":["Manrope"],"mono-code":["JetBrains Mono"],"label-sm":["Manrope"],"headline-sm":["Manrope"],"headline-lg":["Manrope"]},"fontSize":{"headline-xl":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"mono-metric":["13px",{"lineHeight":"18px","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"17px","fontWeight":"400"}],"headline-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"19px","fontWeight":"400"}],"mono-code":["11px",{"lineHeight":"15px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-sm":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface select-none antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-5xl mx-auto px-window-padding flex flex-col justify-between pt-space-sm pb-space-sm"><div class="flex items-center justify-between w-full h-10"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 mr-2"><div class="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#febc2e] border border-[#d89e24] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#28c840] border border-[#1aab29] cursor-pointer"></div></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Stretchly Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHNuvp4iwgpKMXpORq4wQ_GYKGQxn1-aJBc_c5vjziZj5Ht5MNnBlVLtxDHeSnRRzlRGntp-AL4L24e-isp-OZMcSzQ9b5z6CyOMXQsl86MTe7Ua2thAGRyOObEde4wuvhuXrrGYhUi4cQPsiDv0iP9S_erlqecPmVKobwM5Io_X988vjzsUbBKg0U4e4oOh9H1-uOohnBOEySrN-kXdHj3WTFMI6w_XDsYs-snCrMzA4cjai2Ab79ZQjF"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Stretchly</span></div></div><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface">Preferences</span><span class="font-mono-code text-mono-code bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded">v1.15.0</span></div><div class="flex items-center gap-space-md"><button aria-label="Toggle Appearance Mode" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="w-full flex justify-center mt-space-xs"><nav class="flex items-center bg-surface-container p-1 rounded-xl" data-active-classes="bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold"><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="settings" href="#">Settings</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="schedule" href="#">Schedule</a><a aria-current="page" class="px-space-md py-1.5 rounded-lg transition-all bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold" data-path="theme-and-audio" href="#">Theme &amp; Audio</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="about" href="#">About</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="love-stretchly" href="#">Love Stretchly</a></nav></div></div></header><main class="w-full pt-24 max-w-5xl mx-auto px-window-padding pb-space-2xl"><div class="flex flex-col w-full">
+<!-- Subtle Header Notification & Active State Syncer -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const activeNav = document.querySelector('nav a[data-path="theme-and-audio"]');
+      if (activeNav) {
+        activeNav.classList.remove('text-on-surface-variant');
+        activeNav.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-[0_1px_4px_rgba(0,0,0,0.06)]', 'font-semibold');
+      }
+    });
+  </script>
+<!-- Layout Scaffolding: Asymmetric Settings Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left / Main Settings Stream (col 1 to 7) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Group 1: Appearance & Color Scheme -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg relative overflow-hidden">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">palette</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Appearance &amp; Color Scheme</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Customize break window overlay visual tone and immersive presence</p>
+</div>
+</div>
+<!-- Color Swatches Grid -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Break Overlay Tone</label>
+<div class="grid grid-cols-3 sm:grid-cols-6 gap-space-sm pt-space-2xs" id="swatch-group">
+<!-- Teal (Default Active) -->
+<button class="swatch-btn flex flex-col items-center gap-1.5 p-2 rounded-xl transition-all bg-surface-container-high ring-2 ring-primary" data-color="#006765" data-name="Teal Calm" data-theme="teal" type="button">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Teal</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">#006765</span>
+</button>
+<!-- Wine -->
+<button class="swatch-btn flex flex-col items-center gap-1.5 p-2 rounded-xl transition-all hover:bg-surface-container-low" data-color="#9a442d" data-name="Wine Amber" data-theme="wine" type="button">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-sm opacity-90">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Wine</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">#9A442D</span>
+</button>
+<!-- White -->
+<button class="swatch-btn flex flex-col items-center gap-1.5 p-2 rounded-xl transition-all hover:bg-surface-container-low" data-color="#ffffff" data-name="Paper Bright" data-theme="white" type="button">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">White</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">#FFFFFF</span>
+</button>
+<!-- Charcoal -->
+<button class="swatch-btn flex flex-col items-center gap-1.5 p-2 rounded-xl transition-all hover:bg-surface-container-low" data-color="#0b1c30" data-name="Deep Obsidian" data-theme="charcoal" type="button">
+<div class="w-8 h-8 rounded-full bg-on-surface flex items-center justify-center text-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Charcoal</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">#0B1C30</span>
+</button>
+<!-- Sand -->
+<button class="swatch-btn flex flex-col items-center gap-1.5 p-2 rounded-xl transition-all hover:bg-surface-container-low" data-color="#cbdbf5" data-name="Sand Pearl" data-theme="sand" type="button">
+<div class="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Sand</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">#CBDBF5</span>
+</button>
+<!-- Slate -->
+<button class="swatch-btn flex flex-col items-center gap-1.5 p-2 rounded-xl transition-all hover:bg-surface-container-low" data-color="#4b7e6e" data-name="Mineral Slate" data-theme="slate" type="button">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary shadow-sm">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Slate</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">#4B7E6E</span>
+</button>
+</div>
+</div>
+<!-- Window Transparency & Blur Controls -->
+<div class="flex flex-col gap-space-md pt-space-xs bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Enable window transparency</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Allow background blur pass-through when screen dimming</span>
+</div>
+<!-- Custom Mac Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="transparency-toggle" type="checkbox"/>
+<div class="w-10 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-inner"></div>
+</label>
+</div>
+<!-- Opacity Slider -->
+<div class="flex flex-col gap-1.5 pt-space-2xs" id="opacity-slider-wrapper">
+<div class="flex justify-between items-center font-label-md text-label-md">
+<span class="text-on-surface-variant">Overlay Opacity</span>
+<span class="font-mono-metric text-mono-metric text-primary font-bold" id="opacity-val">90%</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" id="opacity-range" max="100" min="40" type="range" value="90"/>
+</div>
+</div>
+</section>
+<!-- Group 2: Sounds & Chimes -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">volume_up</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Sounds &amp; Chimes</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gentle auditory cues for break initiation and completion</p>
+</div>
+</div>
+<!-- Master Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="audio-toggle" type="checkbox"/>
+<div class="w-10 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-inner"></div>
+</label>
+</div>
+<!-- Chime Selection Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm" id="audio-selection-grid">
+<!-- Card 1: Crystal Glass (Active) -->
+<div class="audio-card cursor-pointer p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-md transition-all shadow-sm" data-chime="crystal">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Crystal Glass</span>
+<span class="chime-badge w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Soothing high resonant chime</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+<span class="font-mono-code text-mono-code font-medium">432 Hz</span>
+</div>
+<button class="play-btn w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Wind Chime -->
+<div class="audio-card cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container flex flex-col justify-between gap-space-md transition-all" data-chime="wind">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Wind Chime</span>
+<span class="chime-badge w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gentle zen breeze chimes</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+<span class="font-mono-code text-mono-code">528 Hz</span>
+</div>
+<button class="play-btn w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Tic Toc -->
+<div class="audio-card cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container flex flex-col justify-between gap-space-md transition-all" data-chime="tictoc">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tic Toc</span>
+<span class="chime-badge w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Subtle mechanical tactile click</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+<span class="font-mono-code text-mono-code">Acoustic</span>
+</div>
+<button class="play-btn w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Reverie -->
+<div class="audio-card cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container flex flex-col justify-between gap-space-md transition-all" data-chime="reverie">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Reverie</span>
+<span class="chime-badge w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ambient meditative singing bowl</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+<span class="font-mono-code text-mono-code">Deep Om</span>
+</div>
+<button class="play-btn w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Master Volume Bar -->
+<div class="flex flex-col gap-2 pt-space-xs bg-surface-container-low p-space-md rounded-xl">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">volume_down</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Notification Volume</span>
+</div>
+<span class="font-mono-metric text-mono-metric text-primary font-bold" id="volume-indicator">75%</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" id="volume-range" max="100" min="0" type="range" value="75"/>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Muted</span>
+<span>Balanced</span>
+<span>Maximum</span>
+</div>
+</div>
+</section>
+<!-- Group 3: System Tray Icon Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">laptop_chromebook</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">System Tray Icon</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Display preferences in macOS menu bar &amp; Windows taskbar</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Dropdown Select: Icon Style -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Icon Style</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-2.5 rounded-xl cursor-pointer focus:outline-none focus:bg-surface-container-high transition-colors" id="tray-style-select">
+<option selected="" value="logo">Default Icon (App Logo)</option>
+<option value="timer">Remaining Time (MM:SS)</option>
+<option value="ring">Progress Ring (Gauge)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Shows active state at a glance</span>
+</div>
+<!-- Segmented Control: Color Mode -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Tray Color Mode</label>
+<div class="flex items-center p-1 bg-surface-container-low rounded-xl" id="tray-mode-selector">
+<button class="tray-mode-btn flex-1 py-1.5 px-space-md rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm flex items-center justify-center gap-1.5 transition-all" data-mode="color" type="button">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>Full Color</span>
+</button>
+<button class="tray-mode-btn flex-1 py-1.5 px-space-md rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1.5 transition-all" data-mode="mono" type="button">
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface-variant"></span>
+<span>Monochrome</span>
+</button>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Adapts seamlessly to dark or light OS themes</span>
+</div>
+</div>
+<!-- Dynamic Tray Preview Strip -->
+<div class="flex items-center justify-between bg-surface-container-high p-space-md rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Menu Bar Preview:</span>
+<div class="flex items-center gap-3 bg-surface-container-lowest px-space-md py-1.5 rounded-lg shadow-inner">
+<span class="font-mono-code text-mono-code text-on-surface-variant opacity-70">Mon 10:42 AM</span>
+<div class="flex items-center gap-1" id="tray-icon-preview">
+<img alt="Stretchly Mini" class="h-4 w-4 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHNuvp4iwgpKMXpORq4wQ_GYKGQxn1-aJBc_c5vjziZj5Ht5MNnBlVLtxDHeSnRRzlRGntp-AL4L24e-isp-OZMcSzQ9b5z6CyOMXQsl86MTe7Ua2thAGRyOObEde4wuvhuXrrGYhUi4cQPsiDv0iP9S_erlqecPmVKobwM5Io_X988vjzsUbBKg0U4e4oOh9H1-uOohnBOEySrN-kXdHj3WTFMI6w_XDsYs-snCrMzA4cjai2Ab79ZQjF"/>
+<span class="font-mono-code text-mono-code text-primary font-bold hidden" id="tray-dynamic-text">18:40</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">wifi</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">battery_5_bar</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Live Break Overlay Preview & Ambient Guide (col 8 to 12) -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl lg:sticky lg:top-28">
+<!-- Live Preview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">visibility</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Break Overlay Live View</span>
+</div>
+<span class="font-mono-code text-mono-code px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-semibold">Simulated</span>
+</div>
+<!-- Simulated Monitor Window -->
+<div class="relative rounded-xl overflow-hidden shadow-lg aspect-[4/3] flex items-center justify-center p-space-md text-center group">
+<!-- Background Wallpaper Mock -->
+<div class="absolute inset-0 bg-surface-dim bg-cover bg-center" data-alt="A minimal and modern designer desk workspace with calm daylight, laptop, soft plant leaves and subtle wooden textures in high resolution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNHQIlZ_4g8QHBl3XvqMYAh4Nj8Jmr-Jxaproj1bwEuJYoAZg5muzTm9DTPRa4C4Xane8M91UN1viZy6a1UBihD1z3GXJr_p7AUGffMeM3XYGBYeNHHN6TzneL8nJ48ew96o2ZnNHAoCvQevOwNSbFYq2TIiW3aAG7y8oVFXkSaUhp-TbA4f7HJO7oVaLc0cIPeOi7TVZ45NSd5Q_UfLY7nxrXyGXvzNzPZmypQR8h4hsmaamZBtQYWA')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
+<!-- Overlay Sheet (Themed dynamically) -->
+<div class="absolute inset-0 transition-all duration-300 backdrop-blur-md flex flex-col items-center justify-center p-6 text-on-primary" id="live-preview-overlay" style="background-color: rgba(0, 103, 101, 0.90);">
+<!-- Floating Animated Micro Break Prompt -->
+<div class="flex flex-col items-center gap-3 animate-fade-in">
+<div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-[28px]">self_improvement</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-white/80">Microbreak</span>
+<span class="font-headline-lg text-headline-lg font-bold text-white tracking-tight">Rest your eyes</span>
+<p class="font-body-sm text-body-sm text-white/90 max-w-[200px] leading-snug mt-1">
+                  Look at something at least 20 feet away for 20 seconds.
+                </p>
+</div>
+<!-- Mini Progress Bar in Break Card -->
+<div class="w-44 h-1.5 bg-white/25 rounded-full overflow-hidden mt-1">
+<div class="w-2/3 h-full bg-white rounded-full transition-all duration-1000"></div>
+</div>
+<span class="font-mono-code text-mono-code text-white/75">00:14 remaining</span>
+<button class="mt-1 px-3 py-1 rounded-full bg-white/20 hover:bg-white/30 text-white font-label-sm text-label-sm transition-all backdrop-blur-sm">
+                Skip this break
+              </button>
+</div>
+<!-- Opacity info pill -->
+<div class="absolute bottom-2 right-2 bg-black/40 px-2 py-0.5 rounded text-[10px] font-mono-code text-white/80">
+<span id="preview-opacity-tag">90% Opacity</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="preview-theme-label">Active Theme: Teal Calm</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-1" id="test-break-btn">
+<span>Test Window</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Quick Audio Atmosphere Advice Tile -->
+<div class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+<span class="font-headline-sm text-headline-sm">Mindful Acoustics</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Soft, non-jarring acoustic tones trigger less cortisol during deep focus tasks. We recommend pairing the <strong class="text-on-surface font-semibold">Crystal Glass</strong> or <strong class="text-on-surface font-semibold">Reverie</strong> chime with ambient opacity at 85-90%.
+        </p>
+<div class="flex items-center gap-2 pt-space-xs font-mono-code text-mono-code text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Designed with ergonomic soundscapes</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro Interaction Logic -->
+<script>
+    (function() {
+      // Swatch Selector
+      const swatches = document.querySelectorAll('.swatch-btn');
+      const liveOverlay = document.getElementById('live-preview-overlay');
+      const previewThemeLabel = document.getElementById('preview-theme-label');
+      const opacityRange = document.getElementById('opacity-range');
+      const opacityVal = document.getElementById('opacity-val');
+      const previewOpacityTag = document.getElementById('preview-opacity-tag');
+      const transparencyToggle = document.getElementById('transparency-toggle');
+      const opacitySliderWrapper = document.getElementById('opacity-slider-wrapper');
+
+      let currentHex = '#006765';
+
+      function updateOverlayColor() {
+        const opacity = transparencyToggle.checked ? (opacityRange.value / 100) : 1;
+        // Convert hex to rgb
+        let c = currentHex.replace('#','');
+        if(c.length === 3) c = c.split('').map(x => x+x).join('');
+        const num = parseInt(c, 16);
+        const r = (num >> 16) & 255;
+        const g = (num >> 8) & 255;
+        const b = num & 255;
+
+        liveOverlay.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+        previewOpacityTag.textContent = `${Math.round(opacity * 100)}% Opacity`;
+
+        // Invert text inside preview if white background
+        if (currentHex.toLowerCase() === '#ffffff') {
+          liveOverlay.classList.remove('text-on-primary');
+          liveOverlay.classList.add('text-on-surface');
+          liveOverlay.querySelectorAll('span, p, button').forEach(el => {
+            el.classList.remove('text-white', 'text-white/80', 'text-white/90', 'text-white/75');
+            el.classList.add('text-on-surface');
+          });
+        } else {
+          liveOverlay.classList.add('text-on-primary');
+          liveOverlay.classList.remove('text-on-surface');
+          liveOverlay.querySelectorAll('span, p, button').forEach(el => {
+            el.classList.add('text-white');
+          });
+        }
+      }
+
+      swatches.forEach(btn => {
+        btn.addEventListener('click', () => {
+          swatches.forEach(s => {
+            s.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-high');
+            const check = s.querySelector('.material-symbols-outlined');
+            if (check) check.classList.add('hidden');
+          });
+          btn.classList.add('ring-2', 'ring-primary', 'bg-surface-container-high');
+          const activeCheck = btn.querySelector('.material-symbols-outlined');
+          if (activeCheck) activeCheck.classList.remove('hidden');
+
+          currentHex = btn.getAttribute('data-color');
+          previewThemeLabel.textContent = `Active Theme: ${btn.getAttribute('data-name')}`;
+          updateOverlayColor();
+        });
+      });
+
+      // Opacity Slider
+      opacityRange.addEventListener('input', (e) => {
+        opacityVal.textContent = `${e.target.value}%`;
+        updateOverlayColor();
+      });
+
+      // Transparency Toggle
+      transparencyToggle.addEventListener('change', (e) => {
+        if (!e.target.checked) {
+          opacitySliderWrapper.classList.add('opacity-40', 'pointer-events-none');
+          liveOverlay.classList.remove('backdrop-blur-md');
+        } else {
+          opacitySliderWrapper.classList.remove('opacity-40', 'pointer-events-none');
+          liveOverlay.classList.add('backdrop-blur-md');
+        }
+        updateOverlayColor();
+      });
+
+      // Sound Card Selection & Simulation
+      const audioCards = document.querySelectorAll('.audio-card');
+      const masterAudioToggle = document.getElementById('audio-toggle');
+      const volumeRange = document.getElementById('volume-range');
+      const volumeIndicator = document.getElementById('volume-indicator');
+
+      volumeRange.addEventListener('input', (e) => {
+        volumeIndicator.textContent = `${e.target.value}%`;
+      });
+
+      audioCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (!masterAudioToggle.checked) return;
+          audioCards.forEach(c => {
+            c.classList.remove('bg-surface-container', 'shadow-sm');
+            c.classList.add('bg-surface-container-low');
+            const dot = c.querySelector('.chime-badge');
+            if(dot) dot.classList.replace('bg-primary', 'bg-transparent');
+            const pBtn = c.querySelector('.play-btn');
+            if(pBtn) {
+              pBtn.classList.replace('bg-primary', 'bg-surface-container-highest');
+              pBtn.classList.replace('text-on-primary', 'text-on-surface');
+            }
+          });
+          card.classList.add('bg-surface-container', 'shadow-sm');
+          card.classList.remove('bg-surface-container-low');
+          const activeDot = card.querySelector('.chime-badge');
+          if(activeDot) activeDot.classList.replace('bg-transparent', 'bg-primary');
+          const activeBtn = card.querySelector('.play-btn');
+          if(activeBtn) {
+            activeBtn.classList.replace('bg-surface-container-highest', 'bg-primary');
+            activeBtn.classList.replace('text-on-surface', 'text-on-primary');
+          }
+        });
+
+        const playBtn = card.querySelector('.play-btn');
+        if (playBtn) {
+          playBtn.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            // Pulse icon animation simulating sound
+            const icon = playBtn.querySelector('.material-symbols-outlined');
+            icon.textContent = 'volume_up';
+            playBtn.classList.add('scale-110');
+            setTimeout(() => {
+              icon.textContent = 'play_arrow';
+              playBtn.classList.remove('scale-110');
+            }, 900);
+          });
+        }
+      });
+
+      masterAudioToggle.addEventListener('change', (e) => {
+        const grid = document.getElementById('audio-selection-grid');
+        if (!e.target.checked) {
+          grid.classList.add('opacity-40', 'pointer-events-none');
+        } else {
+          grid.classList.remove('opacity-40', 'pointer-events-none');
+        }
+      });
+
+      // System Tray Preview Controls
+      const traySelect = document.getElementById('tray-style-select');
+      const trayText = document.getElementById('tray-dynamic-text');
+      const trayBtns = document.querySelectorAll('.tray-mode-btn');
+      const trayIcon = document.querySelector('#tray-icon-preview img');
+
+      traySelect.addEventListener('change', (e) => {
+        if (e.target.value === 'timer') {
+          trayText.textContent = '18:40';
+          trayText.classList.remove('hidden');
+        } else if (e.target.value === 'ring') {
+          trayText.textContent = '72%';
+          trayText.classList.remove('hidden');
+        } else {
+          trayText.classList.add('hidden');
+        }
+      });
+
+      trayBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          trayBtns.forEach(b => {
+            b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
+
+          if (btn.getAttribute('data-mode') === 'mono') {
+            trayIcon.classList.add('grayscale', 'contrast-200');
+          } else {
+            trayIcon.classList.remove('grayscale', 'contrast-200');
+          }
+        });
+      });
+
+      // Test Break Notification trigger
+      document.getElementById('test-break-btn').addEventListener('click', () => {
+        liveOverlay.classList.add('scale-95');
+        setTimeout(() => {
+          liveOverlay.classList.remove('scale-95');
+        }, 150);
+      });
+
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-sm shadow-[0_-1px_4px_rgba(0,0,0,0.02)]"><div class="max-w-5xl mx-auto px-window-padding flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Status: Active &amp; Monitoring</span><span class="font-mono-metric text-mono-metric text-tertiary">Next break in 18m 40s</span></div></footer></body></html>

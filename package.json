@@ -38,6 +38,10 @@
   "build": {
     "appId": "net.hovancik.stretchly",
     "productName": "Stretchly",
+    "files": [
+      "app/**/*",
+      "package.json"
+    ],
     "dmg": {
       "icon": "build/icon.icns",
       "iconSize": 128,
@@ -106,7 +110,8 @@
       ],
       "asarUnpack": [
         "node_modules/windows-notification-state/**",
-        "node_modules/macos-notification-state/**"
+        "node_modules/macos-notification-state/**",
+        "app/images/**"
       ]
     },
     "portable": {

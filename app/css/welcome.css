@@ -43,11 +43,11 @@ body[dir=rtl] .welcome > :nth-child(1) > div > span {
 }
 
 .welcome > :nth-child(1) > span {
-  font-family: 'Noto Sans Light', 'Noto Sans Arabic Light',
+  font-family: 'Vazirmatn Light', 'Vazirmatn', 'Noto Sans Light', 'Noto Sans Arabic Light',
     'Noto Sans CJK KR Light',
     'Noto Sans Devanagari Light',
     'Noto Sans Gujarati Light', 'Noto Sans Gurmukhi Light',
-    'Noto Sans JP Light', 'Noto Sans Hebrew Light';
+    'Noto Sans JP Light', 'Noto Sans Hebrew Light', sans-serif;
   font-size: 20px;
   line-height: 30px;
 }

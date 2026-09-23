@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#ffdbd2","on-tertiary-fixed":"#002018","error-container":"#ffdad6","tertiary":"#326556","primary-fixed-dim":"#86d4d0","on-tertiary-container":"#f5fff9","secondary-container":"#fc9174","on-secondary-fixed":"#3c0800","on-primary-fixed-variant":"#00504e","surface-container":"#e5eeff","outline":"#6f7978","tertiary-container":"#4b7e6e","on-secondary":"#ffffff","on-secondary-container":"#742814","inverse-surface":"#213145","on-tertiary-fixed-variant":"#1b4f41","primary-fixed":"#a1f0ec","surface-tint":"#076a67","surface-variant":"#d3e4fe","on-surface-variant":"#3e4948","on-secondary-fixed-variant":"#7c2e19","on-primary":"#ffffff","tertiary-fixed":"#b8eeda","on-primary-fixed":"#00201f","secondary":"#9a442d","outline-variant":"#bec9c7","inverse-primary":"#86d4d0","background":"#f8f9ff","surface-container-low":"#eff4ff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","surface-dim":"#cbdbf5","on-background":"#0b1c30","error":"#ba1a1a","secondary-fixed-dim":"#ffb4a1","tertiary-fixed-dim":"#9cd1be","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","on-surface":"#0b1c30","on-error-container":"#93000a","primary":"#006765","primary-container":"#2d807e","on-primary-container":"#f3fffd","surface":"#f8f9ff","surface-bright":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"window-max-content-width":"640px","window-padding":"24px","window-default-width":"860px","card-gap":"12px","window-sidebar-width":"220px","space-sm":"8px","space-xl":"24px","window-min-width":"740px","card-padding":"16px 18px","space-2xs":"2px","space-xs":"4px","space-2xl":"32px","space-md":"12px","space-base":"16px","space-3xl":"40px","space-lg":"20px"},"fontFamily":{"headline-xl":["Manrope"],"body-lg":["Manrope"],"mono-metric":["JetBrains Mono"],"body-sm":["Manrope"],"headline-md":["Manrope"],"label-md":["Manrope"],"label-lg":["Manrope"],"body-md":["Manrope"],"mono-code":["JetBrains Mono"],"label-sm":["Manrope"],"headline-sm":["Manrope"],"headline-lg":["Manrope"]},"fontSize":{"headline-xl":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"mono-metric":["13px",{"lineHeight":"18px","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"17px","fontWeight":"400"}],"headline-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"19px","fontWeight":"400"}],"mono-code":["11px",{"lineHeight":"15px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-sm":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface select-none antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-5xl mx-auto px-window-padding flex flex-col justify-between pt-space-sm pb-space-sm"><div class="flex items-center justify-between w-full h-10"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 mr-2"><div class="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#febc2e] border border-[#d89e24] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#28c840] border border-[#1aab29] cursor-pointer"></div></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Stretchly Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHNuvp4iwgpKMXpORq4wQ_GYKGQxn1-aJBc_c5vjziZj5Ht5MNnBlVLtxDHeSnRRzlRGntp-AL4L24e-isp-OZMcSzQ9b5z6CyOMXQsl86MTe7Ua2thAGRyOObEde4wuvhuXrrGYhUi4cQPsiDv0iP9S_erlqecPmVKobwM5Io_X988vjzsUbBKg0U4e4oOh9H1-uOohnBOEySrN-kXdHj3WTFMI6w_XDsYs-snCrMzA4cjai2Ab79ZQjF"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Stretchly</span></div></div><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface">Preferences</span><span class="font-mono-code text-mono-code bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded">v1.15.0</span></div><div class="flex items-center gap-space-md"><button aria-label="Toggle Appearance Mode" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="w-full flex justify-center mt-space-xs"><nav class="flex items-center bg-surface-container p-1 rounded-xl" data-active-classes="bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold"><a aria-current="page" class="px-space-md py-1.5 rounded-lg transition-all bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold" data-path="settings" href="#">Settings</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="schedule" href="#">Schedule</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="theme-and-audio" href="#">Theme &amp; Audio</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="about" href="#">About</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="love-stretchly" href="#">Love Stretchly</a></nav></div></div></header><main class="w-full pt-24 max-w-5xl mx-auto px-window-padding pb-space-2xl"><div class="flex flex-col w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left / Primary Settings Stream (Constrained Native Settings Pane) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Section Title & Status Badge -->
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-mono-code text-mono-code tracking-wider uppercase">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            System &amp; Session Architecture
+          </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mt-space-2xs">General Settings</h1>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span>
+          Auto-synchronized
+        </div>
+</div>
+<!-- CARD 1: System Startup & Break Display -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">desktop_windows</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Startup &amp; Display Mode</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage how Stretchly initiates and renders reminders</p>
+</div>
+</div>
+<span class="font-mono-code text-mono-code bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded">Core 01</span>
+</div>
+<div class="space-y-space-md pt-space-xs">
+<!-- Row 1: Startup Toggle -->
+<div class="flex items-center justify-between py-space-sm">
+<div class="max-w-[75%]">
+<div class="font-headline-sm text-headline-sm text-on-surface">Start on computer startup</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+                Automatically launch Stretchly silently in the background when you log in to your desktop.
+              </div>
+</div>
+<button aria-checked="true" class="relative inline-flex h-[22px] w-[40px] shrink-0 cursor-pointer rounded-full bg-primary p-[2px] transition-colors duration-200 ease-in-out focus:outline-none" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-outline-variant'); const dot=this.querySelector('.thumb'); dot.classList.toggle('translate-x-[18px]'); dot.classList.toggle('translate-x-0');" role="switch" type="button">
+<span class="thumb pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-[18px]"></span>
+</button>
+</div>
+<!-- Divider using surface shifts -->
+<div class="h-[1px] w-full bg-surface-container"></div>
+<!-- Row 2: Segmented Radio (Break Display Mode) -->
+<div class="py-space-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Break Window Appearance</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Select presentation layout for micro &amp; long break alerts</p>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed px-space-xs py-0.5 rounded font-mono-metric">Strict Shield Active</span>
+</div>
+<!-- Segmented Pill Selector -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container p-1 rounded-xl" id="display-mode-selector">
+<button class="display-mode-opt flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md font-semibold transition-all" onclick="selectDisplayMode(this, 'windowed')" type="button">
+<span class="material-symbols-outlined text-[16px]">picture_in_picture</span>
+                Windowed View
+              </button>
+<button class="display-mode-opt flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all" onclick="selectDisplayMode(this, 'fullscreen')" type="button">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span>
+                Immersive Fullscreen
+              </button>
+</div>
+<!-- Mode Visual Micro-Preview -->
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between" id="preview-panel">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-8 rounded bg-surface-container flex items-center justify-center relative overflow-hidden">
+<div class="w-6 h-4 bg-primary-container/30 rounded-xs flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface">Non-intrusive floating modal centered above current tasks.</span>
+</div>
+<span class="font-mono-code text-mono-code text-on-surface-variant">Recommended</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-[1px] w-full bg-surface-container"></div>
+<!-- Row 3: Multi-monitor Toggle -->
+<div class="flex items-center justify-between py-space-sm">
+<div class="max-w-[75%]">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Show break reminders on all monitors</span>
+<span class="bg-primary-fixed text-on-primary-fixed font-mono-code text-mono-code px-1.5 py-0.2 rounded">Dual-Setup</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+                Dims secondary and auxiliary displays simultaneously during active breaks to enforce posture relief.
+              </div>
+</div>
+<button aria-checked="true" class="relative inline-flex h-[22px] w-[40px] shrink-0 cursor-pointer rounded-full bg-primary p-[2px] transition-colors duration-200 ease-in-out focus:outline-none" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-outline-variant'); const dot=this.querySelector('.thumb'); dot.classList.toggle('translate-x-[18px]'); dot.classList.toggle('translate-x-0');" role="switch" type="button">
+<span class="thumb pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-[18px]"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 2: Break Experience & Natural Breaks -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">self_improvement</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Break Experience &amp; Awareness</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tailor physical health suggestions &amp; smart idle tracking</p>
+</div>
+</div>
+<span class="font-mono-code text-mono-code bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded">Core 02</span>
+</div>
+<div class="space-y-space-md pt-space-xs">
+<!-- Exercise & Stretch Ideas -->
+<div class="py-space-sm">
+<div class="flex items-center justify-between">
+<div class="max-w-[75%]">
+<span class="font-headline-sm text-headline-sm text-on-surface">Show exercise &amp; stretch ideas during breaks</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+                  Presents verified physical therapist prompts tailored to eye care, cervical spine, and wrists.
+                </p>
+</div>
+<button aria-checked="true" class="relative inline-flex h-[22px] w-[40px] shrink-0 cursor-pointer rounded-full bg-primary p-[2px] transition-colors duration-200 ease-in-out focus:outline-none" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-outline-variant'); const dot=this.querySelector('.thumb'); dot.classList.toggle('translate-x-[18px]'); dot.classList.toggle('translate-x-0');" role="switch" type="button">
+<span class="thumb pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-[18px]"></span>
+</button>
+</div>
+<!-- Interactive Idea Pill Cloud -->
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container-low flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-space-xs">Sample Prompts:</span>
+<span class="bg-surface-container-lowest text-primary font-mono-code text-mono-code px-space-sm py-1 rounded-full shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary">visibility</span> 20-20-20 Rule
+              </span>
+<span class="bg-surface-container-lowest text-primary font-mono-code text-mono-code px-space-sm py-1 rounded-full shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary">accessibility_new</span> Cervical Neck Rolls
+              </span>
+<span class="bg-surface-container-lowest text-primary font-mono-code text-mono-code px-space-sm py-1 rounded-full shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary">pan_tool</span> Wrist Flexor Release
+              </span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container"></div>
+<!-- Natural Breaks & Idle Sensing -->
+<div class="flex items-center justify-between py-space-sm">
+<div class="max-w-[70%]">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Natural breaks (idle timer detection)</span>
+<span class="material-symbols-outlined text-tertiary text-[16px]" title="Pauses interval if keyboard/mouse is untouched">info</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+                If away from computer for more than 5 minutes, Stretchly pauses break scheduling and counts it as rest.
+              </div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center bg-surface-container px-space-sm py-1 rounded-lg">
+<span class="font-mono-metric text-mono-metric text-on-surface mr-1">5</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">min</span>
+</div>
+<button aria-checked="true" class="relative inline-flex h-[22px] w-[40px] shrink-0 cursor-pointer rounded-full bg-primary p-[2px] transition-colors duration-200 ease-in-out focus:outline-none" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-outline-variant'); const dot=this.querySelector('.thumb'); dot.classList.toggle('translate-x-[18px]'); dot.classList.toggle('translate-x-0');" role="switch" type="button">
+<span class="thumb pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-[18px]"></span>
+</button>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container"></div>
+<!-- Do Not Disturb Mode -->
+<div class="flex items-center justify-between py-space-sm">
+<div class="max-w-[75%]">
+<span class="font-headline-sm text-headline-sm text-on-surface">Do Not Disturb &amp; Presentation Shield</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+                Automatically suspend scheduled alerts when screen sharing, Keynote, or fullscreen video playback is detected.
+              </div>
+</div>
+<!-- Inactive by default as requested -->
+<button aria-checked="false" class="relative inline-flex h-[22px] w-[40px] shrink-0 cursor-pointer rounded-full bg-outline-variant p-[2px] transition-colors duration-200 ease-in-out focus:outline-none" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-outline-variant'); const dot=this.querySelector('.thumb'); dot.classList.toggle('translate-x-[18px]'); dot.classList.toggle('translate-x-0');" role="switch" type="button">
+<span class="thumb pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full bg-surface-container-lowest shadow-md transition duration-200 ease-in-out translate-x-0"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 3: Localization & Maintenance Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">translate</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Localization &amp; Profile Engine</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Language syntax and global configuration fallback</p>
+</div>
+</div>
+<span class="font-mono-code text-mono-code bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded">Core 03</span>
+</div>
+<div class="space-y-space-md pt-space-xs">
+<!-- Language Selector -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm py-space-sm">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Application Language</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+                Select your preferred locale for break descriptions, tips, and dialogue controls.
+              </div>
+</div>
+<!-- Custom Styled Select Box -->
+<div class="relative min-w-[200px]">
+<select class="w-full appearance-none bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg px-space-md py-2.5 rounded-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40 transition-colors" id="language-select">
+<option selected="" value="en-US">English (US)</option>
+<option value="fa">فارسی (Persian)</option>
+<option value="es">Español</option>
+<option value="de">Deutsch</option>
+<option value="fr">Français</option>
+<option value="ja">日本語 (Japanese)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 pointer-events-none text-on-surface-variant text-[18px]">unfold_more</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container"></div>
+<!-- Bottom Actions Bar -->
+<div class="pt-space-xs flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<button class="w-full sm:w-auto flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg text-secondary hover:bg-secondary-fixed transition-colors font-label-md text-label-md group" onclick="confirmReset()" type="button">
+<span class="material-symbols-outlined text-[16px] group-hover:rotate-180 transition-transform">restart_alt</span>
+              Restore Default Settings
+            </button>
+<div class="flex items-center gap-space-xs text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">cloud_done</span>
+<span>All changes saved automatically</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Rail: Tactile Status, Physical Metrics & Quick Tips -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Tactile Mini Dashboard Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-mono-code text-mono-code text-on-surface-variant tracking-wider uppercase">Today's Balance</span>
+<span class="font-mono-metric text-mono-metric bg-primary/10 text-primary px-2 py-0.5 rounded-full">Optimal</span>
+</div>
+<div class="mt-space-sm flex items-center justify-center">
+<!-- Circular Completion Ring Chart -->
+<div class="relative w-36 h-36 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary transition-all duration-1000" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-dasharray="263.89" stroke-dashoffset="65.97" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">75%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Goal Met</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm mt-space-md pt-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg text-center">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">14</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Micro Breaks</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg text-center">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">3</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Long Breaks</div>
+</div>
+</div>
+</div>
+<!-- Live Notification Preview Widget -->
+<div class="bg-surface-container-low rounded-xl p-space-lg relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Preview Notification</span>
+<button class="text-primary hover:text-primary-container text-label-sm font-label-sm flex items-center gap-0.5" onclick="triggerTestNotification()" type="button">
+<span class="material-symbols-outlined text-[14px]">play_circle</span>
+            Test
+          </button>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-md transition-all duration-300" id="test-banner">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Time for a micro-break</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">20s</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Gently look away at an object at least 20 feet away to relax eye muscles.
+              </p>
+</div>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full w-2/3 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Quick Guidance Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md">
+<div class="flex items-center gap-space-xs text-tertiary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+<span class="font-label-md text-label-md font-semibold">Ergonomics Tip</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          The American Academy of Ophthalmology recommends blinking frequently and following the 20-20-20 rhythm during intense computer sessions.
+        </p>
+</div>
+</div>
+</div>
+<script>
+    function selectDisplayMode(element, mode) {
+      const parent = element.parentElement;
+      parent.querySelectorAll('.display-mode-opt').forEach(btn => {
+        btn.classList.remove('bg-surface-container-lowest', 'shadow-sm', 'text-primary', 'font-semibold');
+        btn.classList.add('text-on-surface-variant');
+      });
+      element.classList.add('bg-surface-container-lowest', 'shadow-sm', 'text-primary', 'font-semibold');
+      element.classList.remove('text-on-surface-variant');
+
+      const preview = document.getElementById('preview-panel');
+      if (mode === 'fullscreen') {
+        preview.innerHTML = `
+          <div class="flex items-center gap-space-sm">
+            <div class="w-10 h-8 rounded bg-primary/20 flex items-center justify-center relative overflow-hidden">
+              <span class="material-symbols-outlined text-primary text-[18px]">fullscreen_exit</span>
+            </div>
+            <span class="font-body-sm text-body-sm text-on-surface">Full screen overlay dims all workspace apps completely.</span>
+          </div>
+          <span class="font-mono-code text-mono-code text-primary font-semibold">Zen Mode</span>
+        `;
+      } else {
+        preview.innerHTML = `
+          <div class="flex items-center gap-space-sm">
+            <div class="w-10 h-8 rounded bg-surface-container flex items-center justify-center relative overflow-hidden">
+              <div class="w-6 h-4 bg-primary-container/30 rounded-xs flex items-center justify-center">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+            </div>
+            <span class="font-body-sm text-body-sm text-on-surface">Non-intrusive floating modal centered above current tasks.</span>
+          </div>
+          <span class="font-mono-code text-mono-code text-on-surface-variant">Recommended</span>
+        `;
+      }
+    }
+
+    function triggerTestNotification() {
+      const banner = document.getElementById('test-banner');
+      banner.classList.add('scale-105', 'bg-tertiary-fixed/30');
+      setTimeout(() => {
+        banner.classList.remove('scale-105', 'bg-tertiary-fixed/30');
+      }, 500);
+    }
+
+    function confirmReset() {
+      if (window.confirm("Restore all General Settings to system defaults?")) {
+        const selects = document.querySelectorAll('select');
+        selects.forEach(s => s.selectedIndex = 0);
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-sm shadow-[0_-1px_4px_rgba(0,0,0,0.02)]"><div class="max-w-5xl mx-auto px-window-padding flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Status: Active &amp; Monitoring</span><span class="font-mono-metric text-mono-metric text-tertiary">Next break in 18m 40s</span></div></footer></body></html>

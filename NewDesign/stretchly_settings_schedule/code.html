@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#ffdbd2","on-tertiary-fixed":"#002018","error-container":"#ffdad6","tertiary":"#326556","primary-fixed-dim":"#86d4d0","on-tertiary-container":"#f5fff9","secondary-container":"#fc9174","on-secondary-fixed":"#3c0800","on-primary-fixed-variant":"#00504e","surface-container":"#e5eeff","outline":"#6f7978","tertiary-container":"#4b7e6e","on-secondary":"#ffffff","on-secondary-container":"#742814","inverse-surface":"#213145","on-tertiary-fixed-variant":"#1b4f41","primary-fixed":"#a1f0ec","surface-tint":"#076a67","surface-variant":"#d3e4fe","on-surface-variant":"#3e4948","on-secondary-fixed-variant":"#7c2e19","on-primary":"#ffffff","tertiary-fixed":"#b8eeda","on-primary-fixed":"#00201f","secondary":"#9a442d","outline-variant":"#bec9c7","inverse-primary":"#86d4d0","background":"#f8f9ff","surface-container-low":"#eff4ff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","surface-dim":"#cbdbf5","on-background":"#0b1c30","error":"#ba1a1a","secondary-fixed-dim":"#ffb4a1","tertiary-fixed-dim":"#9cd1be","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","on-surface":"#0b1c30","on-error-container":"#93000a","primary":"#006765","primary-container":"#2d807e","on-primary-container":"#f3fffd","surface":"#f8f9ff","surface-bright":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"window-max-content-width":"640px","window-padding":"24px","window-default-width":"860px","card-gap":"12px","window-sidebar-width":"220px","space-sm":"8px","space-xl":"24px","window-min-width":"740px","card-padding":"16px 18px","space-2xs":"2px","space-xs":"4px","space-2xl":"32px","space-md":"12px","space-base":"16px","space-3xl":"40px","space-lg":"20px"},"fontFamily":{"headline-xl":["Manrope"],"body-lg":["Manrope"],"mono-metric":["JetBrains Mono"],"body-sm":["Manrope"],"headline-md":["Manrope"],"label-md":["Manrope"],"label-lg":["Manrope"],"body-md":["Manrope"],"mono-code":["JetBrains Mono"],"label-sm":["Manrope"],"headline-sm":["Manrope"],"headline-lg":["Manrope"]},"fontSize":{"headline-xl":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"mono-metric":["13px",{"lineHeight":"18px","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"17px","fontWeight":"400"}],"headline-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"19px","fontWeight":"400"}],"mono-code":["11px",{"lineHeight":"15px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-sm":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface select-none antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-5xl mx-auto px-window-padding flex flex-col justify-between pt-space-sm pb-space-sm"><div class="flex items-center justify-between w-full h-10"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 mr-2"><div class="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#febc2e] border border-[#d89e24] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#28c840] border border-[#1aab29] cursor-pointer"></div></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Stretchly Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHNuvp4iwgpKMXpORq4wQ_GYKGQxn1-aJBc_c5vjziZj5Ht5MNnBlVLtxDHeSnRRzlRGntp-AL4L24e-isp-OZMcSzQ9b5z6CyOMXQsl86MTe7Ua2thAGRyOObEde4wuvhuXrrGYhUi4cQPsiDv0iP9S_erlqecPmVKobwM5Io_X988vjzsUbBKg0U4e4oOh9H1-uOohnBOEySrN-kXdHj3WTFMI6w_XDsYs-snCrMzA4cjai2Ab79ZQjF"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Stretchly</span></div></div><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface">Preferences</span><span class="font-mono-code text-mono-code bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded">v1.15.0</span></div><div class="flex items-center gap-space-md"><button aria-label="Toggle Appearance Mode" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="w-full flex justify-center mt-space-xs"><nav class="flex items-center bg-surface-container p-1 rounded-xl" data-active-classes="bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold"><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="settings" href="#">Settings</a><a aria-current="page" class="px-space-md py-1.5 rounded-lg transition-all bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold" data-path="schedule" href="#">Schedule</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="theme-and-audio" href="#">Theme &amp; Audio</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="about" href="#">About</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="love-stretchly" href="#">Love Stretchly</a></nav></div></div></header><main class="w-full pt-24 max-w-5xl mx-auto px-window-padding pb-space-2xl"><div class="flex flex-col w-full">
+<!-- Interactive Navigation Tab sync for Shell -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('header nav a');
+      links.forEach(a => {
+        if (a.getAttribute('data-path') === 'schedule') {
+          a.className = "px-space-md py-1.5 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all";
+        } else {
+          a.className = "px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+        }
+      });
+    });
+  </script>
+<!-- Top Hero & Daily Rhythm Pulse View -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-card-gap mb-space-xl items-stretch">
+<!-- Schedule Rhythm Monitor Hero -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-mono-code text-mono-code text-primary uppercase tracking-wider font-semibold">Active Rhythm</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Daily Cadence &amp; Interval Engine</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Automated cycles to prevent visual strain, ergonomic tension, and mental fatigue.</p>
+</div>
+<div class="hidden sm:flex flex-col items-end">
+<span class="font-mono-metric text-mono-metric text-primary bg-surface-container px-space-sm py-1 rounded-lg">
+            20s / 10m Micro
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">4 cycles per long break</span>
+</div>
+</div>
+<!-- Schedule Visual Timeline Chart -->
+<div class="mt-space-lg relative z-10 bg-surface-container-low/70 rounded-lg p-space-md">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-2">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-tertiary">pace</span>
+            Next 60 Minutes Horizon
+          </span>
+<span class="font-mono-code text-mono-code text-on-surface">Now: 14:24</span>
+</div>
+<!-- Interactive Progress Ribbon -->
+<div class="w-full h-8 bg-surface-container rounded-md relative flex items-center p-1 overflow-hidden">
+<!-- Mini break markers -->
+<div class="absolute left-[16.6%] top-1 bottom-1 w-2.5 bg-primary-container rounded-sm shadow-sm flex items-center justify-center group cursor-pointer" title="Mini Break: 20s">
+<div class="hidden group-hover:block absolute bottom-8 bg-inverse-surface text-inverse-on-surface font-mono-code text-[10px] py-0.5 px-1.5 rounded shadow whitespace-nowrap">Mini: 20s at 14:34</div>
+</div>
+<div class="absolute left-[33.3%] top-1 bottom-1 w-2.5 bg-primary-container rounded-sm shadow-sm flex items-center justify-center group cursor-pointer" title="Mini Break: 20s">
+<div class="hidden group-hover:block absolute bottom-8 bg-inverse-surface text-inverse-on-surface font-mono-code text-[10px] py-0.5 px-1.5 rounded shadow whitespace-nowrap">Mini: 20s at 14:44</div>
+</div>
+<div class="absolute left-[50.0%] top-1 bottom-1 w-2.5 bg-primary-container rounded-sm shadow-sm flex items-center justify-center group cursor-pointer" title="Mini Break: 20s">
+<div class="hidden group-hover:block absolute bottom-8 bg-inverse-surface text-inverse-on-surface font-mono-code text-[10px] py-0.5 px-1.5 rounded shadow whitespace-nowrap">Mini: 20s at 14:54</div>
+</div>
+<!-- Long break zone -->
+<div class="absolute left-[66.6%] top-1 bottom-1 w-10 bg-secondary-container rounded-sm shadow-sm flex items-center justify-center group cursor-pointer" title="Long Break: 5 min">
+<span class="material-symbols-outlined text-on-secondary-container text-[14px]">self_improvement</span>
+<div class="hidden group-hover:block absolute bottom-8 bg-inverse-surface text-inverse-on-surface font-mono-code text-[10px] py-0.5 px-1.5 rounded shadow whitespace-nowrap">Long Break: 5m at 15:04</div>
+</div>
+<div class="absolute left-[86.6%] top-1 bottom-1 w-2.5 bg-primary-container rounded-sm shadow-sm flex items-center justify-center group cursor-pointer" title="Mini Break: 20s">
+<div class="hidden group-hover:block absolute bottom-8 bg-inverse-surface text-inverse-on-surface font-mono-code text-[10px] py-0.5 px-1.5 rounded shadow whitespace-nowrap">Mini: 20s at 15:19</div>
+</div>
+<!-- Elapsed marker -->
+<div class="absolute left-0 top-0 bottom-0 bg-primary/10 border-r-2 border-primary" style="width: 14%;"></div>
+</div>
+<div class="flex justify-between items-center mt-2 font-mono-code text-[11px] text-on-surface-variant">
+<span>+0m</span>
+<span>+15m</span>
+<span>+30m</span>
+<span>+45m</span>
+<span>+60m</span>
+</div>
+</div>
+</div>
+<!-- Right Stat & Wellness Snapshot -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-space-xl flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Today's Focus Guard</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">nature_people</span>
+</div>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">14</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">/ 16 sessions completed</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 87%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">20-20-20 Optical Rule Met</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">Eye fatigue risk reduced by 64% today</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cards Grid for Schedule Configuration -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xl mb-space-xl">
+<!-- CARD 1: MINI BREAKS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div>
+<!-- Card Header with Master Toggle -->
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Mini Breaks</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Brief micro-pauses for eye resetting</p>
+</div>
+</div>
+<!-- Master Toggle 1 -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="master-mini" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-space-lg pt-space-xs transition-opacity duration-200" id="mini-break-settings">
+<!-- Slider 1: Mini Break Duration -->
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface font-medium">Duration</span>
+<span class="font-mono-metric text-mono-metric bg-primary text-on-primary px-space-xs py-0.5 rounded-md shadow-xs transition-all" id="badge-mini-duration">
+                20 seconds
+              </span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" id="slider-mini-duration" max="60" min="10" step="5" type="range" value="20"/>
+<div class="flex justify-between text-on-surface-variant font-mono-code text-mono-code mt-1.5">
+<span>10s</span>
+<span>30s</span>
+<span>60s</span>
+</div>
+</div>
+<!-- Slider 2: Mini Break Frequency -->
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface font-medium">Frequency</span>
+<span class="font-mono-metric text-mono-metric bg-surface-container-highest text-primary font-semibold px-space-xs py-0.5 rounded-md" id="badge-mini-freq">
+                Every 10 minutes
+              </span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" id="slider-mini-freq" max="45" min="5" step="5" type="range" value="10"/>
+<div class="flex justify-between text-on-surface-variant font-mono-code text-mono-code mt-1.5">
+<span>5m</span>
+<span>20m</span>
+<span>45m</span>
+</div>
+</div>
+<!-- Additional Mini Toggles -->
+<div class="space-y-space-md pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface">Notification countdown</span>
+<span class="font-mono-code text-mono-code bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded">30s notice</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Alert banner prior to mini screen dim</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface">Allow postpone</span>
+<span class="font-mono-code text-mono-code bg-surface-container text-tertiary px-1.5 py-0.2 rounded font-medium">+2m delay</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Shows gentle postpone action button</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Preset Footnote -->
+<div class="mt-space-lg pt-space-sm flex items-center justify-between bg-surface-container/50 -mx-space-xl -mb-space-xl px-space-xl py-space-sm rounded-b-xl">
+<span class="font-mono-code text-mono-code text-on-surface-variant">Preset: 20-20-20 Standard</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline" id="reset-mini-btn">Reset to Default</button>
+</div>
+</div>
+<!-- CARD 2: LONG BREAKS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div>
+<!-- Card Header with Master Toggle -->
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">self_improvement</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Long Breaks</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ergonomic posture shift &amp; stretching</p>
+</div>
+</div>
+<!-- Master Toggle 2 -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="master-long" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="space-y-space-lg pt-space-xs transition-opacity duration-200" id="long-break-settings">
+<!-- Slider 3: Long Break Duration -->
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface font-medium">Duration</span>
+<span class="font-mono-metric text-mono-metric bg-secondary text-on-secondary px-space-xs py-0.5 rounded-md shadow-xs transition-all" id="badge-long-duration">
+                5 minutes
+              </span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" id="slider-long-duration" max="20" min="2" step="1" type="range" value="5"/>
+<div class="flex justify-between text-on-surface-variant font-mono-code text-mono-code mt-1.5">
+<span>2m</span>
+<span>10m</span>
+<span>20m</span>
+</div>
+</div>
+<!-- Slider 4: Long Break Frequency -->
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface font-medium">Interval Cadence</span>
+<span class="font-mono-metric text-mono-metric bg-surface-container-highest text-secondary font-semibold px-space-xs py-0.5 rounded-md" id="badge-long-freq">
+                Every 4 mini breaks (~45m)
+              </span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" id="slider-long-freq" max="8" min="2" step="1" type="range" value="4"/>
+<div class="flex justify-between text-on-surface-variant font-mono-code text-mono-code mt-1.5">
+<span>Every 2 mini</span>
+<span>Every 4 mini</span>
+<span>Every 8 mini</span>
+</div>
+</div>
+<!-- Additional Long Toggles -->
+<div class="space-y-space-md pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Show notification beforehand</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gives a heads-up 1 minute before overlay</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Allow postpone</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lets you delay long break once by 5 mins</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Preset Footnote -->
+<div class="mt-space-lg pt-space-sm flex items-center justify-between bg-surface-container/50 -mx-space-xl -mb-space-xl px-space-xl py-space-sm rounded-b-xl">
+<span class="font-mono-code text-mono-code text-on-surface-variant">Recommended: 5m walk session</span>
+<button class="font-label-sm text-label-sm text-secondary hover:underline" id="reset-long-btn">Reset to Default</button>
+</div>
+</div>
+</div>
+<!-- GROUP 3: STRICT MODE & HEALTH DISCIPLINE CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm mb-space-lg">
+<!-- Header with Lock Badge -->
+<div class="flex items-center justify-between pb-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Strict Mode &amp; Health Commitment</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Enforce physical habits by blocking skip controls</p>
+</div>
+</div>
+<span class="font-mono-code text-mono-code bg-secondary-fixed-dim/40 text-secondary font-semibold px-space-xs py-1 rounded">Discipline Policy</span>
+</div>
+<!-- Amber Alert Banner -->
+<div class="bg-secondary-fixed/50 rounded-lg p-space-md mb-space-base flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-secondary-fixed">Strict screen lockdown</span>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant mt-0.5">
+          Strict mode removes the skip button entirely and temporarily prevents window focus switching until the break timer completes. Ideal for preventing RSI or chronic screen fatigue.
+        </p>
+</div>
+</div>
+<!-- Strict Mode Options Rows -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Mini break strict -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">hourglass_empty</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Strict mini breaks</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Disable skip button for 20s pauses</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="strict-mini" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Long break strict -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">lock_clock</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Strict long breaks</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lock screen fully during 5m rests</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="strict-long" type="checkbox"/>
+<div class="w-10 h-[22px] bg-surface-variant rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-[18px] after:w-[18px] after:transition-all after:shadow-sm peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Micro-interactions & Value Binding Script -->
+<script>
+    (function() {
+      // Mini break sliders
+      const sliderMiniDur = document.getElementById('slider-mini-duration');
+      const badgeMiniDur = document.getElementById('badge-mini-duration');
+      sliderMiniDur.addEventListener('input', (e) => {
+        badgeMiniDur.textContent = `${e.target.value} seconds`;
+      });
+
+      const sliderMiniFreq = document.getElementById('slider-mini-freq');
+      const badgeMiniFreq = document.getElementById('badge-mini-freq');
+      sliderMiniFreq.addEventListener('input', (e) => {
+        badgeMiniFreq.textContent = `Every ${e.target.value} minutes`;
+      });
+
+      // Long break sliders
+      const sliderLongDur = document.getElementById('slider-long-duration');
+      const badgeLongDur = document.getElementById('badge-long-duration');
+      sliderLongDur.addEventListener('input', (e) => {
+        badgeLongDur.textContent = `${e.target.value} minutes`;
+      });
+
+      const sliderLongFreq = document.getElementById('slider-long-freq');
+      const badgeLongFreq = document.getElementById('badge-long-freq');
+      sliderLongFreq.addEventListener('input', (e) => {
+        const estMin = parseInt(e.target.value, 10) * parseInt(sliderMiniFreq.value, 10);
+        badgeLongFreq.textContent = `Every ${e.target.value} mini breaks (~${estMin}m)`;
+      });
+
+      // Master toggles state management
+      const masterMini = document.getElementById('master-mini');
+      const miniSettings = document.getElementById('mini-break-settings');
+      masterMini.addEventListener('change', () => {
+        if (!masterMini.checked) {
+          miniSettings.classList.add('opacity-40', 'pointer-events-none');
+        } else {
+          miniSettings.classList.remove('opacity-40', 'pointer-events-none');
+        }
+      });
+
+      const masterLong = document.getElementById('master-long');
+      const longSettings = document.getElementById('long-break-settings');
+      masterLong.addEventListener('change', () => {
+        if (!masterLong.checked) {
+          longSettings.classList.add('opacity-40', 'pointer-events-none');
+        } else {
+          longSettings.classList.remove('opacity-40', 'pointer-events-none');
+        }
+      });
+
+      // Reset buttons
+      document.getElementById('reset-mini-btn').addEventListener('click', () => {
+        sliderMiniDur.value = 20;
+        sliderMiniFreq.value = 10;
+        badgeMiniDur.textContent = '20 seconds';
+        badgeMiniFreq.textContent = 'Every 10 minutes';
+      });
+
+      document.getElementById('reset-long-btn').addEventListener('click', () => {
+        sliderLongDur.value = 5;
+        sliderLongFreq.value = 4;
+        badgeLongDur.textContent = '5 minutes';
+        badgeLongFreq.textContent = 'Every 4 mini breaks (~40m)';
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-sm shadow-[0_-1px_4px_rgba(0,0,0,0.02)]"><div class="max-w-5xl mx-auto px-window-padding flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Status: Active &amp; Monitoring</span><span class="font-mono-metric text-mono-metric text-tertiary">Next break in 18m 40s</span></div></footer></body></html>

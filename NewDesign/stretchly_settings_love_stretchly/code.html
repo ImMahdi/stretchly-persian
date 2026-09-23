@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#ffdbd2","on-tertiary-fixed":"#002018","error-container":"#ffdad6","tertiary":"#326556","primary-fixed-dim":"#86d4d0","on-tertiary-container":"#f5fff9","secondary-container":"#fc9174","on-secondary-fixed":"#3c0800","on-primary-fixed-variant":"#00504e","surface-container":"#e5eeff","outline":"#6f7978","tertiary-container":"#4b7e6e","on-secondary":"#ffffff","on-secondary-container":"#742814","inverse-surface":"#213145","on-tertiary-fixed-variant":"#1b4f41","primary-fixed":"#a1f0ec","surface-tint":"#076a67","surface-variant":"#d3e4fe","on-surface-variant":"#3e4948","on-secondary-fixed-variant":"#7c2e19","on-primary":"#ffffff","tertiary-fixed":"#b8eeda","on-primary-fixed":"#00201f","secondary":"#9a442d","outline-variant":"#bec9c7","inverse-primary":"#86d4d0","background":"#f8f9ff","surface-container-low":"#eff4ff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","surface-dim":"#cbdbf5","on-background":"#0b1c30","error":"#ba1a1a","secondary-fixed-dim":"#ffb4a1","tertiary-fixed-dim":"#9cd1be","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","on-surface":"#0b1c30","on-error-container":"#93000a","primary":"#006765","primary-container":"#2d807e","on-primary-container":"#f3fffd","surface":"#f8f9ff","surface-bright":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"window-max-content-width":"640px","window-padding":"24px","window-default-width":"860px","card-gap":"12px","window-sidebar-width":"220px","space-sm":"8px","space-xl":"24px","window-min-width":"740px","card-padding":"16px 18px","space-2xs":"2px","space-xs":"4px","space-2xl":"32px","space-md":"12px","space-base":"16px","space-3xl":"40px","space-lg":"20px"},"fontFamily":{"headline-xl":["Manrope"],"body-lg":["Manrope"],"mono-metric":["JetBrains Mono"],"body-sm":["Manrope"],"headline-md":["Manrope"],"label-md":["Manrope"],"label-lg":["Manrope"],"body-md":["Manrope"],"mono-code":["JetBrains Mono"],"label-sm":["Manrope"],"headline-sm":["Manrope"],"headline-lg":["Manrope"]},"fontSize":{"headline-xl":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"mono-metric":["13px",{"lineHeight":"18px","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"17px","fontWeight":"400"}],"headline-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"19px","fontWeight":"400"}],"mono-code":["11px",{"lineHeight":"15px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-sm":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface select-none antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-5xl mx-auto px-window-padding flex flex-col justify-between pt-space-sm pb-space-sm"><div class="flex items-center justify-between w-full h-10"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 mr-2"><div class="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#febc2e] border border-[#d89e24] cursor-pointer"></div><div class="w-3 h-3 rounded-full bg-[#28c840] border border-[#1aab29] cursor-pointer"></div></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Stretchly Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UHNuvp4iwgpKMXpORq4wQ_GYKGQxn1-aJBc_c5vjziZj5Ht5MNnBlVLtxDHeSnRRzlRGntp-AL4L24e-isp-OZMcSzQ9b5z6CyOMXQsl86MTe7Ua2thAGRyOObEde4wuvhuXrrGYhUi4cQPsiDv0iP9S_erlqecPmVKobwM5Io_X988vjzsUbBKg0U4e4oOh9H1-uOohnBOEySrN-kXdHj3WTFMI6w_XDsYs-snCrMzA4cjai2Ab79ZQjF"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Stretchly</span></div></div><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface">Preferences</span><span class="font-mono-code text-mono-code bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded">v1.15.0</span></div><div class="flex items-center gap-space-md"><button aria-label="Toggle Appearance Mode" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="w-full flex justify-center mt-space-xs"><nav class="flex items-center bg-surface-container p-1 rounded-xl" data-active-classes="bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold"><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="settings" href="#">Settings</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="schedule" href="#">Schedule</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="theme-and-audio" href="#">Theme &amp; Audio</a><a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-path="about" href="#">About</a><a aria-current="page" class="px-space-md py-1.5 rounded-lg transition-all bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold" data-path="love-stretchly" href="#">Love Stretchly</a></nav></div></div></header><main class="w-full pt-24 max-w-5xl mx-auto px-window-padding pb-space-2xl"><div class="flex flex-col w-full">
+<div class="flex flex-col lg:flex-row gap-space-xl items-start w-full">
+<aside class="w-full lg:w-window-sidebar-width shrink-0 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary px-space-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wider text-secondary font-bold">Community</span>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center justify-between px-space-sm py-2 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md transition-all font-semibold" href="#patronage">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span>Back Project</span>
+</span>
+<span class="font-mono-code text-mono-code bg-secondary-fixed text-on-secondary-fixed px-1.5 py-0.5 rounded-full">★ VIP</span>
+</a>
+<a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-md text-label-md transition-all" href="#perks">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+<span>Supporter Perks</span>
+</span>
+</a>
+<a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-md text-label-md transition-all" href="#cloud-sync">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">cloud_sync</span>
+<span>Cloud Sync</span>
+</span>
+</a>
+<a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-md text-label-md transition-all" href="#hall-of-fame">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">emoji_events</span>
+<span>Hall of Fame</span>
+</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">340+</span>
+</a>
+</div>
+</div>
+<div class="bg-gradient-to-br from-secondary-fixed via-surface-container to-tertiary-fixed p-space-base rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-secondary-container opacity-20 blur-xl"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-label-lg text-label-lg font-bold">100% Free &amp; Open</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant leading-relaxed">
+            Zero telemetry. No invasive trackers, no user profilers, and no locked timer features. Built for mindful humans.
+          </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Monthly Goal</span>
+<span class="font-mono-code text-mono-code text-primary font-bold">84%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 84%"></div>
+</div>
+<p class="font-mono-code text-mono-code text-on-surface-variant text-right">$1,680 / $2,000 / mo</p>
+</div>
+</aside>
+<div class="flex-1 w-full max-w-[640px] flex flex-col gap-space-xl">
+<section class="relative bg-surface-container-lowest rounded-xl shadow-sm p-space-xl overflow-hidden" id="patronage">
+<div class="absolute top-0 right-0 w-48 h-48 bg-secondary-fixed/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-primary to-tertiary"></div>
+<div class="relative z-10 flex flex-col gap-space-lg">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Community-Sustained</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Keep Stretchly Free &amp; Healthy!</h2>
+</div>
+</div>
+<span class="px-space-xs py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-mono-code text-mono-code font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+              Independent
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Stretchly is an independent, 100% free and open-source utility crafted by Jan Hovančík alongside community contributors. We deliberately shun behavioral tracking, ads, and forced subscriptions. Your voluntary patronage directly covers mandatory Apple &amp; Windows code-signing certificates, secure server infrastructure, and sustainable development.
+          </p>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm p-space-md bg-surface-container-low rounded-xl">
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-primary font-bold">500,000+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Breaks Completed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">8.4 Years</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Continuous Care</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-mono-metric text-mono-metric text-tertiary font-bold">0 Trackers</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Guaranteed Privacy</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-space-md pt-space-xs">
+<a class="flex-1 min-w-[200px] h-11 px-space-lg rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-xs shadow-md hover:bg-primary-container transition-all active:scale-[0.98]" href="https://github.com/sponsors/hovancik" target="_blank">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>Become a Contributor</span>
+</a>
+<button class="h-11 px-space-lg rounded-xl bg-surface-container text-on-surface font-headline-sm text-headline-sm font-medium flex items-center justify-center gap-space-xs hover:bg-surface-container-high transition-all" id="verify-toggle-btn">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Already a Contributor?</span>
+</button>
+</div>
+<div class="hidden flex-col gap-space-md p-space-md bg-surface-container-low rounded-xl" id="verify-drawer">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Verify Contributor Status</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">One-click token handshake</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium flex items-center justify-center gap-space-xs shadow-sm hover:bg-surface-container transition-all">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+<span>GitHub Sponsors</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium flex items-center justify-center gap-space-xs shadow-sm hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-secondary text-[18px]">currency_exchange</span>
+<span>Connect via Patreon</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-mono-code text-mono-code">Offline token validation • Zero telemetry payload transmitted</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md" id="perks">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Contributor Benefits</h3>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-tertiary-fixed px-2 py-0.5 rounded-full">Unlocked via Tier 1+</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+<span class="font-label-lg text-label-lg font-bold">End-to-End Cloud Sync</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Privately mirror interval timers, audio sets, and micro-break rules across your macOS, Linux, and Windows setups.
+            </p>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+<span class="font-label-lg text-label-lg font-bold">Custom Stretch Routines</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Import markdown-driven eye exercises, desk yoga prompts, and bespoke ergonomic micro-movements.
+            </p>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[18px]">science</span>
+<span class="font-label-lg text-label-lg font-bold">Early Canary Channels</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Test next-generation idle sensors, multi-monitor ambient scrims, and system audio ducking before public rollout.
+            </p>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span class="font-label-lg text-label-lg font-bold">Backer Badge &amp; Credits</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Receive your verified avatar mark in the Stretchly client and permanent listing in our repository README.
+            </p>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md" id="cloud-sync">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Contributor Preferences</h3>
+</div>
+<span class="font-mono-code text-mono-code bg-surface-container-high text-on-surface px-2 py-0.5 rounded">Active Patron: tier_sponsor</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex flex-col pr-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sync Preferences across devices</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Encrypted with local private key (Zero-Knowledge sync server)</span>
+</div>
+<button aria-label="Toggle Sync" class="w-10 h-6 bg-primary rounded-full relative p-0.5 transition-colors focus:outline-none shrink-0" id="toggle-sync">
+<div class="w-5 h-5 bg-on-primary rounded-full shadow-sm transform translate-x-4 transition-transform" id="toggle-dot"></div>
+</button>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex flex-col pr-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Custom Exercise Library</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Load external community YAML/JSON routines automatically</span>
+</div>
+<button aria-label="Toggle Library" class="w-10 h-6 bg-primary rounded-full relative p-0.5 transition-colors focus:outline-none shrink-0" id="toggle-library">
+<div class="w-5 h-5 bg-on-primary rounded-full shadow-sm transform translate-x-4 transition-transform" id="library-dot"></div>
+</button>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex flex-col pr-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Manual Sync Trigger</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant" id="sync-status">Last mirrored: 4 minutes ago</span>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md font-semibold flex items-center gap-space-xs hover:bg-surface-container transition-all" id="sync-now-btn">
+<span class="material-symbols-outlined text-[16px]" id="sync-icon">sync</span>
+<span>Sync Now</span>
+</button>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md" id="hall-of-fame">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Supporter Hall of Fame</h3>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1 font-semibold" href="https://github.com/hovancik/stretchly#sponsors" target="_blank">
+<span>View All 340+ Backers</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Immensely grateful to the sustained patrons making open desktop wellbeing possible every release:
+        </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center font-mono-code text-mono-code text-on-primary-fixed font-bold">AS</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">alex_schmidt</span>
+<span class="font-mono-code text-mono-code text-secondary">Sponsor ★</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-mono-code text-mono-code text-on-secondary-fixed font-bold">MK</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">marina_k</span>
+<span class="font-mono-code text-mono-code text-tertiary">Champion</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center font-mono-code text-mono-code text-on-tertiary-fixed font-bold">DL</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">dev_lukas</span>
+<span class="font-mono-code text-mono-code text-secondary">Sponsor ★</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center font-mono-code text-mono-code text-on-surface font-bold">CW</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">claire_w</span>
+<span class="font-mono-code text-mono-code text-tertiary">Supporter</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between border-t-0">
+<span class="font-mono-code text-mono-code text-on-surface-variant">Maintained with care by Jan Hovančík • Stretchly v1.15.0</span>
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm font-semibold">Thank you for stretching</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+    (function initLoveStretchly() {
+      const activeNav = document.querySelector('nav a[data-path="love-stretchly"]');
+      if (activeNav) {
+        document.querySelectorAll('nav a').forEach(a => {
+          a.className = "px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+        });
+        activeNav.className = "px-space-md py-1.5 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.06)] font-semibold flex items-center gap-1.5";
+        activeNav.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: \'FILL\' 1;">favorite</span> Love Stretchly';
+      }
+
+      const verifyToggle = document.getElementById('verify-toggle-btn');
+      const verifyDrawer = document.getElementById('verify-drawer');
+      if (verifyToggle && verifyDrawer) {
+        verifyToggle.addEventListener('click', () => {
+          const isHidden = verifyDrawer.classList.contains('hidden');
+          if (isHidden) {
+            verifyDrawer.classList.remove('hidden');
+            verifyDrawer.classList.add('flex');
+            verifyToggle.classList.add('bg-surface-container-high');
+          } else {
+            verifyDrawer.classList.add('hidden');
+            verifyDrawer.classList.remove('flex');
+            verifyToggle.classList.remove('bg-surface-container-high');
+          }
+        });
+      }
+
+      function setupToggle(btnId, dotId) {
+        const btn = document.getElementById(btnId);
+        const dot = document.getElementById(dotId);
+        if (!btn || !dot) return;
+        let active = true;
+        btn.addEventListener('click', () => {
+          active = !active;
+          if (active) {
+            btn.className = "w-10 h-6 bg-primary rounded-full relative p-0.5 transition-colors focus:outline-none shrink-0";
+            dot.className = "w-5 h-5 bg-on-primary rounded-full shadow-sm transform translate-x-4 transition-transform";
+          } else {
+            btn.className = "w-10 h-6 bg-surface-container-highest rounded-full relative p-0.5 transition-colors focus:outline-none shrink-0";
+            dot.className = "w-5 h-5 bg-surface-container-lowest rounded-full shadow-sm transform translate-x-0 transition-transform";
+          }
+        });
+      }
+
+      setupToggle('toggle-sync', 'toggle-dot');
+      setupToggle('toggle-library', 'library-dot');
+
+      const syncNowBtn = document.getElementById('sync-now-btn');
+      const syncIcon = document.getElementById('sync-icon');
+      const syncStatus = document.getElementById('sync-status');
+      if (syncNowBtn && syncIcon && syncStatus) {
+        syncNowBtn.addEventListener('click', () => {
+          syncIcon.classList.add('animate-spin');
+          syncNowBtn.disabled = true;
+          syncStatus.innerText = 'Encrypting & syncing preferences...';
+          setTimeout(() => {
+            syncIcon.classList.remove('animate-spin');
+            syncNowBtn.disabled = false;
+            syncStatus.innerText = 'Last mirrored: Just now';
+          }, 1200);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-sm shadow-[0_-1px_4px_rgba(0,0,0,0.02)]"><div class="max-w-5xl mx-auto px-window-padding flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Status: Active &amp; Monitoring</span><span class="font-mono-metric text-mono-metric text-tertiary">Next break in 18m 40s</span></div></footer></body></html>

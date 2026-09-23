@@ -36,6 +36,7 @@
     "nav": {
       "settings": "Settings",
       "schedule": "Schedule",
+      "ideas": "Ideas & Tips",
       "theme": "Theme",
       "about": "About",
       "heart": "Love Stretchly"
@@ -70,6 +71,19 @@
       "enableStrictMini": "Enable Strict mode for Mini breaks",
       "enableStrictLong": "Enable Strict mode for Long breaks",
       "cantDisableBoth": "It is not possible to disable both types of breaks"
+    },
+    "ideas": {
+      "title": "Manage Break Ideas & Exercises",
+      "microBreaksTitle": "Mini Break Ideas",
+      "microBreaksDesc": "Each line represents an idea or exercise shown randomly during mini breaks.",
+      "longBreaksTitle": "Long Break Exercises",
+      "longBreaksDesc": "Format for each line: Title | Description (e.g. Walk | Take a walk around the room)",
+      "saveBtn": "Save Changes",
+      "savedToast": "Changes saved successfully ✓",
+      "restoreBtn": "Restore Defaults",
+      "openTxtBtn": "Open in Notepad 📝",
+      "countUnit": "active ideas",
+      "restoreConfirm": "Are you sure you want to reset all ideas to default?"
     },
     "theme": {
       "appearance": "Appearance:",

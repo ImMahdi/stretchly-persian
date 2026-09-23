@@ -1,7 +1,22 @@
 import EventEmitter from 'events'
 import log from 'electron-log/main.js'
-import { desktopIdle } from 'node-desktop-idle-v2'
 import { powerMonitor } from 'electron'
+
+let desktopIdle = {
+  startMonitoring: () => {},
+  stopMonitoring: () => {},
+  getIdleTime: () => 0
+}
+
+try {
+  const mod = await import('node-desktop-idle-v2')
+  if (mod && mod.desktopIdle) {
+    desktopIdle = mod.desktopIdle
+  }
+} catch (err) {
+  log.warn('Stretchly: node-desktop-idle-v2 native binary not available for this Electron ABI, using Electron powerMonitor.')
+}
+
 
 class NaturalBreaksManager extends EventEmitter {
   constructor (settings) {
