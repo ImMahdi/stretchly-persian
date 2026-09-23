@@ -6,11 +6,11 @@
 
 ### دستیار هوشمند، مینیمال و متن‌باز برای یادآوری استراحت‌های کاری و حفظ سلامت پشت کامپیوتر
 
-[![GitHub Release](https://img.shields.io/github/v/release/ImMahdi/stretchly-persian?color=478484&label=نسخه%20انتشار&logo=github)](https://github.com/ImMahdi/stretchly-persian/releases)
-[![License](https://img.shields.io/badge/مجوز-BSD--2--Clause-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/پلتفرم-Windows%20%7C%20Linux%20%7C%20macOS-informational)](https://github.com/ImMahdi/stretchly-persian/releases)
-[![JavaScript Style](https://img.shields.io/badge/کد_استایل-Standard-brightgreen.svg)](https://standardjs.com)
-[![Font](https://img.shields.io/badge/فونت-وزیرمتن%20(Vazirmatn)-orange.svg)](https://github.com/rastikerdar/vazirmatn)
+[![GitHub Release](https://img.shields.io/badge/GitHub%20Release-v1.22.1-478484?logo=github)](https://github.com/ImMahdi/stretchly-persian/releases/tag/v1.22.1)
+[![License](https://img.shields.io/badge/License-BSD--2--Clause-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-informational)](https://github.com/ImMahdi/stretchly-persian/releases/tag/v1.22.1)
+[![JavaScript Style](https://img.shields.io/badge/JavaScript%20Style-Standard-brightgreen.svg)](https://standardjs.com)
+[![Font](https://img.shields.io/badge/Font-Vazirmatn-orange.svg)](https://github.com/rastikerdar/vazirmatn)
 
 <p align="center">
   <a href="#-درباره-این-فورک-و-پروژه-اصلی">درباره این فورک</a> •
@@ -73,8 +73,9 @@
 
 | نسخه | توضیحات | لینک دانلود |
 | :--- | :--- | :---: |
-| **Windows Installer** | فایل نصبی ستاپ برای ویندوز ۱۰ و ۱۱ | [صفحه دانلود](https://github.com/ImMahdi/stretchly-persian/releases) |
-| **Windows Portable** | نسخه پرتابل و بدون نیاز به نصب (اجرای مستقیم) | [صفحه دانلود](https://github.com/ImMahdi/stretchly-persian/releases) |
+| **Windows Installer** | فایل نصبی ستاپ برای ویندوز ۱۰ و ۱۱ (`Stretchly-Setup-1.22.1.exe`) | [دانلود مستقیم](https://github.com/ImMahdi/stretchly-persian/releases/download/v1.22.1/Stretchly-Setup-1.22.1.exe) |
+| **Windows Portable** | نسخه پرتابل و بدون نیاز به نصب (`Stretchly-Portable-1.22.1.exe`) | [دانلود مستقیم](https://github.com/ImMahdi/stretchly-persian/releases/download/v1.22.1/Stretchly-Portable-1.22.1.exe) |
+| **Windows 7z Archive** | آرشیو فشرده فایل‌های اجرایی (`Stretchly-1.22.1-win.7z`) | [دانلود مستقیم](https://github.com/ImMahdi/stretchly-persian/releases/download/v1.22.1/Stretchly-1.22.1-win.7z) |
 
 ---
 
